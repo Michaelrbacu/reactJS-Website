@@ -1,9 +1,14 @@
 import React, { Suspense } from "react";
 import { Route, Routes, Link, useLocation } from "react-router-dom";
+import "./index.css";
+import "./components/weather/weather.css";
 
 import Home from "./components/home/Home";
 
 const About = React.lazy(() => import("./components/about/About"));
+const Weather = React.lazy(() => import("./components/weather/Weather"));
+const Todo = React.lazy(() => import("./components/todo/todo"));
+
 
 const App = () => {
   const location = useLocation();
@@ -11,12 +16,24 @@ const App = () => {
   return (
     <div>
       <nav>
-        <ul>
+        <ul className="header">
           <li>
             <Link to="/home">Home</Link>
           </li>
           <li>
             <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/weather">Weather App</Link>
+          </li>
+          <li>
+            <Link to="/todo">To Do List</Link>
+          </li>
+          <li>
+            
+          </li>
+          <li>
+            
           </li>
         </ul>
       </nav>
@@ -25,10 +42,17 @@ const App = () => {
         <Routes location={location}>
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/weather" element={<Weather />} />
+          <Route path="/todo" element={<Todo />} />
+
         </Routes>
       </Suspense>
     </div>
   );
 };
 
+
+
 export default App;
+
+
