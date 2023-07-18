@@ -5,9 +5,13 @@ import "./components/weather/weather.css";
 
 import Home from "./components/home/Home";
 
+//
+
+
 const About = React.lazy(() => import("./components/about/About"));
 const Weather = React.lazy(() => import("./components/weather/Weather"));
 const Todo = React.lazy(() => import("./components/todo/todo"));
+const Time = React.lazy(() => import("./components/times/times"));
 
 
 const App = () => {
@@ -30,11 +34,12 @@ const App = () => {
             <Link to="/todo">To Do List</Link>
           </li>
           <li>
-            
+            <Link to="/times">Map</Link>
+
           </li>
           <li>
-            
-          </li>
+          
+         </li>
         </ul>
       </nav>
 
@@ -44,6 +49,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/weather" element={<Weather />} />
           <Route path="/todo" element={<Todo />} />
+          <Route path="/times" element={<Time />} />
 
         </Routes>
       </Suspense>
