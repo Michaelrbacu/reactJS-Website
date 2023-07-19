@@ -32,8 +32,8 @@ const Time = () => {
     left: '50px',
     zIndex: 1,
     cursor: 'pointer',
-    width: '30px', // Adjust the width as desired
-    height: '30px', // Adjust the height as desired
+    width: '30px', 
+    height: '30px', 
   }}
 />
 
@@ -47,8 +47,8 @@ const Time = () => {
     left: '320px',
     zIndex: 1,
     cursor: 'pointer',
-    width: '30px', // Adjust the width as desired
-    height: '30px', // Adjust the height as desired
+    width: '30px', 
+    height: '30px', 
   }}
 />
 
@@ -79,7 +79,7 @@ const Time = () => {
               border: 'none',
             }}
           >
-            Close
+            X
           </button>
           <Content buttonId={selectedButtonId} />
         </div>

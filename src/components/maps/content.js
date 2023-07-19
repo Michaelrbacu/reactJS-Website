@@ -18,7 +18,7 @@ const Content = ({ buttonId }) => {
 
   return (
     <div>
-      <h2>Message</h2>
+      <h2>Info</h2>
       <p>{message}</p>
     </div>
   );
