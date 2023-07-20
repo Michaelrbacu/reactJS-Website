@@ -8,17 +8,25 @@ const Home = () => {
     <div className="homepage">
       <h1>Welcome to My Website</h1>
       <div className="apps-container">
-        <div className="app">
-          <h2>App 1</h2>
-          <p>This is the description of App 1.</p>
-          {/* Add any functionality or links for App 1 */}
+        <div className="apps">
+          <h2>Weather App</h2>
+          {<h4>The Weather App functions by using an API from https://openweathermap.org and displays the information gathered after a user gives it the name of a city.</h4>}
         </div>
-        <div className="app">
-          <h2>App 2</h2>
-          <p>This is the description of App 2.</p>
-          {/* Add any functionality or links for App 2 */}
+        <div className="apps">
+          <h1>To Do List App</h1>
+          <h4>IN PROGRESS: The To Do list will function by the user typing in a new task and the task being stored and displayed on the page until removed.</h4>
+          {/**/}
         </div>
-        {/* Add more app components as needed */}
+        <div className="apps">
+          <h1>Map App</h1>
+          <h4>The Map app is a work in progress app that will display the information and timezones of certain countries when clicked on.</h4>
+          {/**/}
+        </div>
+        <div className="apps">
+          <h2>App 4</h2>
+          <p>This is the description of App 4.</p>
+          {/**/}
+        </div>
       </div>
     </div>
   );
