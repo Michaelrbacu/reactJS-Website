@@ -24,7 +24,7 @@ const Home = () => {
         </div>
         <div className="apps">
           <h2>App 4</h2>
-          <p>This is the description of App 4.</p>
+          <p></p>
           {/**/}
         </div>
       </div>
