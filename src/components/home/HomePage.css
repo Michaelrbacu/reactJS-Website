@@ -1,3 +1,14 @@
+@keyframes pulseAnimation {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(255, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+  }
+}
 
 .homepage {
   text-align: center;
@@ -14,9 +25,10 @@
   width: 300px;
   padding: 20px;
   margin: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid transparent;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  animation: pulseAnimation 2s infinite; /* Apply the pulsating animation */
 }
 
 h1 {
