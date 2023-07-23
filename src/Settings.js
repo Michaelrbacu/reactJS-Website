@@ -4,6 +4,10 @@ import "./BrightnessScrollBar.css";
 const BrightnessScrollBar = ({ showScrollBar, brightness, setBrightness }) => {
   const handleBrightnessChange = (e) => {
     setBrightness(e.target.value);
+    document.documentElement.style.setProperty(
+      "--brightness",
+      e.target.value / 100
+    );
   };
 
   return (
