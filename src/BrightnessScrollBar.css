@@ -13,6 +13,10 @@
     transition: opacity 0.3s;
   }
   
+  body {
+    filter: brightness(calc(var(--brightness, 1) * 100%));
+  }
+
   .brightness-scroll-bar.active {
     display: block;
     opacity: 1;

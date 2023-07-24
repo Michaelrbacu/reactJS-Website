@@ -11,11 +11,11 @@ const Home = () => {
           <h4>The Weather App functions by using an API from https://openweathermap.org and displays the information gathered after a user gives it the name of a city.</h4>
         </div>
         <div className="apps">
-          <h1>To Do List App</h1>
-          <h4>IN PROGRESS: The To Do list will function by the user typing in a new task and the task being stored and displayed on the page until removed.</h4>
+          <h2>To Do List App</h2>
+          <h4>The To Do list will function by the user typing in a new task and the task being stored and displayed on the page until removed.</h4>
         </div>
         <div className="apps">
-          <h1>Map App</h1>
+          <h2>Map App</h2>
           <h4>The Map app is a work in progress app that will display the information and timezones of certain countries when clicked on.</h4>
         </div>
         <div className="apps">

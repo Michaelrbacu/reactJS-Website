@@ -21,7 +21,7 @@ const App = () => {
   const location = useLocation();
   const [showBrightnessSettings, setShowBrightnessSettings] = useState(false);
   const [brightness, setBrightness] = useState(100);
-
+  
   const handleBrightnessButtonClick = () => {
     setShowBrightnessSettings(!showBrightnessSettings);
   };
@@ -76,13 +76,14 @@ const App = () => {
           <Route path="/todo" element={<Todo />} />
           <Route path="/map" element={<Time />} />
 
-        </Routes>
+          </Routes>
+        
+        <BrightnessScrollBar
+          showScrollBar={showBrightnessSettings}
+          brightness={brightness}
+          setBrightness={setBrightness}
+        />
       </Suspense>
-      <BrightnessScrollBar
-        showScrollBar={showBrightnessSettings}
-        brightness={brightness}
-        setBrightness={setBrightness}
-      />
 
       <div
         className="content"
@@ -90,7 +91,6 @@ const App = () => {
           backgroundColor: `rgba(255, 255, 255, ${brightness / 100})`,
         }}
       >
-        {}
       </div>
     </div>
   );

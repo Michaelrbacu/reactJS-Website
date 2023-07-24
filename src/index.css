@@ -55,6 +55,7 @@ a {
 
 body {
   font-family: "Roboto", sans-serif;
+  filter: brightness(calc(var(--brightness, 1) * 100%));
 }
 
 .container {
