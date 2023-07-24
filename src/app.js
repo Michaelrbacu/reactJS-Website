@@ -9,7 +9,7 @@ import settings from './settings.png';
 //
 
 
-const About = React.lazy(() => import("./components/about/About"));
+const Projects = React.lazy(() => import("./components/projects/Projects"));
 const Weather = React.lazy(() => import("./components/weather/Weather"));
 const Todo = React.lazy(() => import("./components/todo/todo"));
 const Time = React.lazy(() => import("./components/maps/map"));
@@ -49,7 +49,7 @@ const App = () => {
             <Link className="nav-link" to="/home">Home</Link>
           </li>
           <li>
-            <Link className="nav-link" to="/about">About</Link>
+            <Link className="nav-link" to="/projects">Projects</Link>
           </li>
           <li>
             <Link className="nav-link" to="/weather">Weather App</Link>
@@ -71,7 +71,7 @@ const App = () => {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes location={location}>
           <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="/weather" element={<Weather />} />
           <Route path="/todo" element={<Todo />} />
           <Route path="/map" element={<Time />} />

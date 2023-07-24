@@ -1,0 +1,56 @@
+/* Projects.css */
+@keyframes pulseAnimation {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 15px rgba(255, 0, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+    }
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #ccc;
+  }
+  
+  .heading {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .project {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.5s ease-in-out;
+    animation: pulseAnimation 2s infinite; /* Apply the pulsating animation */
+  }
+  
+  .project.invisible {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  
+  .project.visible {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  .project h2 {
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  
+  .project p {
+    /* No need to set the color here, as it will inherit the color from the container */
+  }
+  
+  
