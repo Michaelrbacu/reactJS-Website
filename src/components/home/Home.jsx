@@ -7,21 +7,14 @@ const Home = () => {
       <h1>Welcome to My Website</h1>
       <div className="apps-container">
         <div className="apps">
-          <h2>Weather App</h2>
-          <h4>The Weather App functions by using an API from https://openweathermap.org and displays the information gathered after a user gives it the name of a city.</h4>
-        </div>
-        <div className="apps">
-          <h2>To Do List App</h2>
-          <h4>The To Do list will function by the user typing in a new task and the task being stored and displayed on the page until removed.</h4>
-        </div>
-        <div className="apps">
-          <h2>Map App</h2>
-          <h4>The Map app is a work in progress app that will display the information and timezones of certain countries when clicked on.</h4>
-        </div>
-        <div className="apps">
-          <h2>App 4</h2>
-          <p></p>
-        </div>
+        <h1>Hello, I'm Michael Bacu</h1>
+      <h4>
+        On this website you can find some of the projects I've built, I have other projects on my github as well.
+      </h4>
+      <br></br>
+          <a href="https://github.com/Michaelrbacu">Github Profile</a>
+          <a href="https://www.linkedin.com/in/michael-bacu-181a551a6/">LinkedIn Profile</a>
+                  </div>
       </div>
     </div>
   );
