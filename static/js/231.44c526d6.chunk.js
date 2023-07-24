@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgpt=self.webpackChunkgpt||[]).push([[231],{231:function(e,n,t){t.r(n);t(791);var i=t(184),a={container:{maxWidth:"600px",margin:"0 auto",padding:"40px",textAlign:"center"},heading:{fontSize:"28px",fontWeight:"bold",marginBottom:"20px"},description:{fontSize:"18px",lineHeight:"1.6"}};n.default=function(){return(0,i.jsx)("div",{style:a.container,children:(0,i.jsx)("h1",{style:a.heading,children:"Hello, I'm Michael Bacu"})})}}}]);
+//# sourceMappingURL=231.44c526d6.chunk.js.map
