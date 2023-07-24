@@ -35,26 +35,27 @@ function Todo() {
 
   return (
     <div className="todo">
+      <div className="todo-content">
+        <ul className="todo-list">
+          {tasks.map((task, index) => (
+            <li key={index} className="chat-message">
+              {task}
+              <button onClick={() => handleDeleteTask(index)}>Delete</button>
+            </li>
+          ))}
+        </ul>
+      </div>
       <div className="todo-form">
         <input
           type="text"
-          placeholder="Enter a task"
+          placeholder="Type a message..."
           value={newTask}
           onChange={handleInputChange}
         />
-        <button onClick={handleAddTask}>Add Task</button>
+        <button onClick={handleAddTask}>Send</button>
       </div>
-      <ul className="todo-list">
-        {tasks.map((task, index) => (
-          <li key={index}>
-            {task}
-            <button onClick={() => handleDeleteTask(index)}>Delete</button>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }
 
 export default Todo;
-

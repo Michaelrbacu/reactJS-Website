@@ -4,11 +4,7 @@ const About = () => {
   return (
     <div style={styles.container}>
       <h1 style={styles.heading}>Hello, I'm Michael Bacu</h1>
-      <p style={styles.description}>
-        Welcome to my portfolio website where I showcase some of the projects I am building while learning React JS.
-        React JS is a powerful library that I became familiar with during an internship, and I'm continuously
-        improving my skills to create better web applications.
-      </p>
+      
     </div>
   );
 };
