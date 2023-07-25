@@ -3,16 +3,16 @@ import "./Projects.css";
 
 const projectsData = [
   {
-    title: "Project 1",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed rhoncus nisi. Vestibulum eget mi nec elit euismod tincidunt.",
+    title: " Sorry the Board game built in JavaFX",
+    description: "https://github.com/Michaelrbacu/CPT-237",
   },
   {
     title: "Project 2",
-    description: "Nulla facilisi. Suspendisse sagittis, nulla in suscipit facilisis, metus massa ultrices lorem, ac interdum lorem quam a libero.",
+    description: "",
   },
   {
     title: "Project 3",
-    description: "Fusce ullamcorper, justo ac varius pulvinar, ex nisi varius lectus, quis bibendum odio ligula nec nunc.",
+    description: "",
   },
 ];
 
