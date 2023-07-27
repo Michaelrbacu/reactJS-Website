@@ -1,56 +1,74 @@
-/* Projects.css */
 @keyframes pulseAnimation {
-    0% {
-      box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
-    }
-    50% {
-      box-shadow: 0 0 0 15px rgba(255, 0, 0, 0);
-    }
-    100% {
-      box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
-    }
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
   }
-  
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    color: #ccc;
+  50% {
+    box-shadow: 0 0 0 15px rgba(255, 0, 0, 0);
   }
-  
-  .heading {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #fff;
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
   }
-  
-  .project {
-    border: 1px solid transparent;
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 15px;
-    transition: transform 0.5s ease-in-out;
-    animation: pulseAnimation 2s infinite; /* Apply the pulsating animation */
-  }
-  
-  .project.invisible {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  
-  .project.visible {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  
-  .project h2 {
-    color: #fff;
-    margin-bottom: 10px;
-  }
-  
-  .project p {
-    /* No need to set the color here, as it will inherit the color from the container */
-  }
-  
-  
+}
+
+
+.container {
+  margin: 0 auto; /* Added margin to center the container */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #ccc;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px; /* Increased spacing between the projects */
+  justify-items: center; /* Center the projects horizontally */
+  animation: slideAnimation 1s ease-in-out;
+}
+
+.project {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 20px; /* Increased padding for better spacing */
+  transition: transform 0.5s ease-in-out;
+  animation: pulseAnimation 2s infinite;
+  opacity: 0;
+}
+
+.project.visible {
+  opacity: 1;
+}
+
+.project h2 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.project p {
+  color: #fff; /* Setting the color for the project description */
+}
+
+/* Apply sliding transition */
+.slide-entering,
+.slide-exiting,
+.slide-exited {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.slide-entered {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Additional animation for the project boxes */
+.project:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+}
