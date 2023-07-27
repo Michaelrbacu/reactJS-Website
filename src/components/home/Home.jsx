@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import './HomePage.css';
 
 const Home = () => {
+  /*
   const [displayText, setDisplayText] = useState("");
   const strings = [
     "Hello, I'm Michael Bacu",
@@ -106,14 +107,16 @@ const Home = () => {
     };
   }, []);
 
+
+  */
   return (
 <div className="homepage">
   <h1>Welcome to My Website</h1>
   <div className="apps-container">
     <div className="apps">
-      <h1 data-target-resolver></h1>
+      <h1>My name is Michael Bacu</h1>
       <h4>
-        <p data-target-resolver>On this website you can find some of the project Ive built.</p>
+        <p>On this website you can find some of the project Ive built.</p>
       </h4>
       <br />
       <a href="https://github.com/Michaelrbacu">Github Profile</a>
