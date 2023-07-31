@@ -1,45 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 
+/* Reset styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scrollbar-width: thin;
-  scrollbar-color: #1d2229 #fff;
 }
 
-
-ul.header {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
+/* Custom Scrollbar */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 20px;
+  background-color: var(--white);
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: var(--three);
+}
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #1d2229;
+}
+*::-webkit-scrollbar-thumb:active {
+  background-color: var(--three);
 }
 
-li {
-  float: left;
-
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color: #111;
-}
-
-a {
-  display: block;
-  padding: 8px;
-  background-color: #333;
-}
-
+/* Variables */
 :root {
   --one: #a1f65e;
   --two: #524ff5;
@@ -53,11 +40,15 @@ a {
   --main-transition: 0.3s;
 }
 
+/* Base Styles */
 body {
   font-family: "Roboto", sans-serif;
   filter: brightness(calc(var(--brightness, 1) * 100%));
   background: url("background.jpg") no-repeat center center fixed;
   background-size: cover;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 .container {
@@ -79,10 +70,38 @@ a {
   text-decoration: none;
 }
 
-p {
-  line-height: 1.5;
+/* Header Navigation */
+ul.header {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  width: 200px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
 }
 
+li {
+  width: 100%;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+/* Main Section Styling */
 .margin-sections {
   margin-top: 90px;
 }
@@ -120,7 +139,7 @@ p {
   background-repeat: no-repeat;
 }
 
-/* Global Styles For All  Button*/
+/* Global Styles For All Buttons */
 button {
   position: relative;
   padding: 10px 20px;
@@ -150,7 +169,7 @@ button:hover::before {
   width: 100%;
 }
 
-/* Global P  */
+/* Paragraph Styling */
 .paragraph {
   margin-bottom: 5px;
   letter-spacing: 2px;
@@ -159,37 +178,7 @@ button:hover::before {
   font-size: 14px;
 }
 
-/* Scrollbar */
-*::-webkit-scrollbar {
-  width: 8px;
-  width: 8px;
-}
-*::-webkit-scrollbar-track {
-  border-radius: 20px;
-  background-color: var(--white);
-}
-
-*::-webkit-scrollbar-track:hover {
-  background-color: var(--white);
-}
-
-*::-webkit-scrollbar-track:active {
-  background-color: var(--white);
-}
-
-*::-webkit-scrollbar-thumb {
-  border-radius: 20px;
-  background-color: var(--three);
-}
-
-*::-webkit-scrollbar-thumb:hover {
-  background-color: #1d2229;
-}
-
-*::-webkit-scrollbar-thumb:active {
-  background-color: var(--three);
-}
-
+/* Navigation Link Styling */
 .nav-link {
   position: relative;
   display: inline-block;
@@ -214,3 +203,72 @@ button:hover::before {
   transform: scaleX(1);
 }
 
+/* App Layout */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.app-container {
+  display: flex;
+  height: 100%;
+}
+
+.sidebar {
+  background-color: #333;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.header li {
+  width: 100%;
+}
+
+.nav-link {
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background-color: #111;
+}
+
+.settings-icon {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+}
+
+.content-container {
+  flex-grow: 1;
+  position: relative;
+  overflow-y: auto;
+}
+
+.sub-menu {
+  display: none;
+  list-style: none;
+  padding-left: 15px;
+}
+
+.header li:hover .sub-menu {
+  display: block;
+}
