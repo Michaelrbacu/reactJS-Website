@@ -1,10 +1,10 @@
-import React, { Suspense, useState } from "react";
+import React, { useState, Suspense } from "react"; // Import Suspense from 'react'
 import { Route, Routes, Link, useLocation } from "react-router-dom";
 import "./index.css";
 import "./components/weather/weather.css";
 import Home from "./components/home/Home";
-import BrightnessScrollBar from "./Settings.js";
-import settings from './settings.png'; 
+import Settings from "./Settings";
+import settings from './settings.png';
 
 const Projects = React.lazy(() => import("./components/projects/Projects"));
 const Weather = React.lazy(() => import("./components/weather/Weather"));
@@ -13,59 +13,53 @@ const ChatBot = React.lazy(() => import("./components/bot/chatbot"));
 
 const App = () => {
   const location = useLocation();
-  const [showBrightnessSettings, setShowBrightnessSettings] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
   const [brightness, setBrightness] = useState(100);
+  const [fontSize, setFontSize] = useState(16);
 
-  const handleBrightnessButtonClick = () => {
-    setShowBrightnessSettings(!showBrightnessSettings);
+  const handleSettingsButtonClick = () => {
+    setShowSettings(!showSettings);
   };
-  return (
-    <div className="app-container">
-      <nav className="sidebar">
-        <ul className="header">
-          <li>
-            <Link className="nav-link" to="/home">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link className="nav-link" to="/projects">
-              Projects
-            </Link>
-          </li>
-          <li>
-            <span className="nav-link">React Apps</span>
-            <ul className="sub-menu">
-              <li>
-                <Link className="nav-link" to="/weather">
-                  Weather App
-                </Link>
-              </li>
-              <li>
-                <Link className="nav-link" to="/todo">
-                  To Do List
-                </Link>
-              </li>
-              <li>
-                <Link className="nav-link" to="/chatbot">
-                ChatBot
-                </Link>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-
+  
+      return (
+      <div className="app-container">
+        <nav className="sidebar">
+          <ul className="header">
+            <li>
+              <Link className="nav-link" to="/home">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link className="nav-link" to="/projects">
+                Projects
+              </Link>
+            </li>
+            <li className="nav-link-container">
+              <span className="nav-link">React Apps</span>
+              <ul className="sub-menu">
+                <li>
+                  <Link className="nav-link" to="/weather">
+                    Weather App
+                  </Link>
+                </li>
+                <li>
+                  <Link className="nav-link" to="/todo">
+                    To Do List
+                  </Link>
+                </li>
+                <li>
+                  <Link className="nav-link" to="/chatbot">
+                    ChatBot
+                  </Link>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        
 
       <div className="content-container">
-        <header>
-          <img
-            src={settings}
-            alt="Settings"
-            onClick={handleBrightnessButtonClick}
-            className="settings-icon"
-          />
-        </header>
 
         <Suspense fallback={<div>Loading...</div>}>
           <Routes location={location}>
@@ -78,12 +72,19 @@ const App = () => {
           </Routes>
         </Suspense>
 
-        <BrightnessScrollBar
-          showScrollBar={showBrightnessSettings}
+        <Settings
+          showSettings={showSettings}
+          setShowSettings={setShowSettings}
           brightness={brightness}
           setBrightness={setBrightness}
+          fontSize={fontSize}
+          setFontSize={setFontSize}
+          settingsImage={settings}
         />
       </div>
+
+          
+
     </div>
   );
 };

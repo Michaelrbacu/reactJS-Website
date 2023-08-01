@@ -120,6 +120,7 @@ const Home = () => {
       </h4>
       <br />
       <a href="https://github.com/Michaelrbacu">Github Profile</a>
+      <br />
       <a href="https://www.linkedin.com/in/michael-bacu-181a551a6/">LinkedIn Profile</a>
     </div>
   </div>

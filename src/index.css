@@ -178,12 +178,15 @@ button:hover::before {
   font-size: 14px;
 }
 
-/* Navigation Link Styling */
 .nav-link {
   position: relative;
   display: inline-block;
   padding: 8px 12px;
   cursor: pointer;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 .nav-link::before {
@@ -202,6 +205,11 @@ button:hover::before {
 .nav-link:hover::before {
   transform: scaleX(1);
 }
+
+.nav-link:hover {
+  background-color: #111;
+}
+
 
 /* App Layout */
 body, html {
@@ -267,8 +275,12 @@ body, html {
   display: none;
   list-style: none;
   padding-left: 15px;
+  transition: max-height 0.3s ease-out;
+  max-height: 0;
+  overflow: hidden;
 }
 
-.header li:hover .sub-menu {
+.nav-link-container:hover .sub-menu {
   display: block;
+  max-height: 150px; 
 }
