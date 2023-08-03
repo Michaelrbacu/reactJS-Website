@@ -2,43 +2,37 @@ import React, { useState, useEffect } from "react";
 import "./HomePage.css";
 
 const Home = () => {
-  const animationText = "Hi My name is Michael Bacu";
-  const characters = "abcdefghijklmnopqrstuvwxyz";
-
-  const getRandomCharacter = () => {
-    return characters.charAt(Math.floor(Math.random() * characters.length));
-  };
-
-  const [animatedText, setAnimatedText] = useState("");
+  const [textAnimationComplete, setTextAnimationComplete] = useState(false);
 
   useEffect(() => {
-    const animateLetter = (index) => {
-      let currentText = "";
+    // Add a timeout to delay setting the animation complete state
+    const timeout = setTimeout(() => {
+      setTextAnimationComplete(true);
+    }, 5000); // Set the delay time here (in milliseconds)
 
-      const animationInterval = setInterval(() => {
-        currentText += getRandomCharacter();
-        setAnimatedText((prevText) => prevText.substr(0, index) + currentText);
-      }, 25);
-
-      setTimeout(() => {
-        clearInterval(animationInterval);
-        setAnimatedText((prevText) => prevText.substr(0, index) + animationText.charAt(index));
-      }, 100);
-    };
-
-    for (let i = 0; i < animationText.length; i++) {
-      setTimeout(() => {
-        animateLetter(i);
-      }, i * 250);
-    }
+    return () => clearTimeout(timeout);
   }, []);
 
   return (
-
     <div className="homepage">
       <h1>
-          {animatedText}
-        </h1>
+        {/* Wrapping each letter in a span for the animation */}
+        <React.Fragment>
+          {Array.from("Hi, my name is Michael Bacu").map((letter, index) => (
+            <React.Fragment key={index}>
+              <span
+                className={`animated-letter}`}
+                style={{
+                  animation: `fadeIn 2.5s ${index * 0.1}s`,
+                }}
+              >
+                {letter}
+              </span>
+              &nbsp; {/* Non-breaking space */}
+            </React.Fragment>
+          ))}
+        </React.Fragment>
+      </h1>
       <div className="card">
         <div class="lines">
           <div class="imgBx">

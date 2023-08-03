@@ -124,3 +124,24 @@ a {
     border-color: #ffffff; /* Change color as needed */
   }
 }
+
+
+/* Add animation to show the letters one by one */
+@keyframes fadeIn {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    font-weight: bold;
+  }
+  100% {
+    opacity: 1;
+    font-weight: normal;
+  }
+}
+
+/* Keep the letters invisible until the animation starts */
+.animated-letter {
+  opacity: 0;
+  display: inline-block;
+}
+
