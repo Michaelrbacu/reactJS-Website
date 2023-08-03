@@ -1,20 +1,8 @@
-/* Settings.css */
-
-/* Add this style to remove the scrollbar */
-body {
-  overflow: hidden;
-}
-
-.settings {
-  position: relative;
-  text-align: right;
-  margin-top: 10px;
-}
-
 .settings-icon {
   width: 30px;
   height: 30px;
   cursor: pointer;
+  z-index: 2;
 }
 
 .settings-popup-container {
@@ -47,6 +35,7 @@ body {
 
 .settings.show {
   pointer-events: none; /* Disable clicking on the settings icon while popups are open */
+  z-index: 3;
 }
 
 /* Optional styling for the input range sliders */
@@ -89,4 +78,97 @@ input[type="range"]::-moz-range-track {
   border-radius: 5px;
 }
 
+/* Settings.css */
 
+/* Define a CSS class for the base font size */
+:root {
+  --base-font-size: 16px;
+}
+
+/* Use rem units for font size throughout your CSS */
+body {
+  font-size: var(--base-font-size);
+}
+
+h1 {
+  font-size: calc(var(--base-font-size) * 2);
+  color: #ffffff;
+
+}
+
+p {
+  font-size: calc(var(--base-font-size) * 1.2);
+  color: #ffffff;
+
+}
+
+/* ... (other elements with font-size properties) ... */
+
+/* ... (existing styles) ... */
+
+.settings {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  transition: 0.5s;
+}
+
+
+.settings .lines {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  overflow: hidden;
+}
+
+.settings .lines::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 600px;  
+  height: 120px;
+  background: linear-gradient(transparent, #e0830a,#e0830a,#e0830a,transparent);
+  animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+  0%{
+    transform: translate(-50%,-50%) rotate(0deg);
+  }
+  100%{
+    transform: translate(-50%,-50%) rotate(360deg);
+  }
+}
+
+.settings .lines::after{
+  content: '';
+  position: absolute;
+  inset: 3px;
+  background: #292929;
+
+
+}
+
+.settings .content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative; /* Add position: relative to establish a new stacking context */
+  z-index: 2; /* Set a higher z-index to show the content over the grey area */
+}
+
+.settings .details {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items:flex-end ;
+  overflow: hidden;
+  position: relative; /* Add position: relative to establish a new stacking context */
+  z-index: 2; /* Set a higher z-index to show the content over the grey area */
+}

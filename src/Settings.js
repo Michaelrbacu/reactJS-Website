@@ -28,10 +28,11 @@ const BrightnessSettings = ({ brightness, setBrightness }) => {
 const FontSizeSettings = ({ fontSize, setFontSize }) => {
   const handleFontSizeChange = (e) => {
     setFontSize(e.target.value);
-    document.documentElement.style.setProperty("--font-size", `${e.target.value}px`);
+    document.documentElement.style.setProperty("--base-font-size", `${e.target.value}px`);
   };
 
   return (
+    
     <div className="font-size-popup">
       <h3>Font Size Settings</h3>
       <input
@@ -41,9 +42,11 @@ const FontSizeSettings = ({ fontSize, setFontSize }) => {
         value={fontSize}
         onChange={handleFontSizeChange}
       />
+      <p>Current Font Size: {fontSize}px</p>
     </div>
   );
 };
+
 
 const Settings = ({ brightness, setBrightness, fontSize, setFontSize }) => {
   const [showSettings, setShowSettings] = useState(false); // Add state for visibility
@@ -54,6 +57,8 @@ const Settings = ({ brightness, setBrightness, fontSize, setFontSize }) => {
 
   return (
     <div className="settings">
+      <div class="lines">
+    <div className="content">
       <header>
         <img
           src={settings}
@@ -67,9 +72,12 @@ const Settings = ({ brightness, setBrightness, fontSize, setFontSize }) => {
       {showSettings && (
         <>
           <BrightnessSettings brightness={brightness} setBrightness={setBrightness} />
+
           <FontSizeSettings fontSize={fontSize} setFontSize={setFontSize} />
         </>
       )}
+    </div>
+    </div>
     </div>
   );
 };
