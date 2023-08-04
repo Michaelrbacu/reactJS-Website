@@ -25,6 +25,8 @@ const App = () => {
       <div className="app-container">
         <nav className="sidebar">
           <ul className="header">
+            
+          
             <li>
               <Link className="nav-link" to="/home">
                 Home
@@ -53,7 +55,22 @@ const App = () => {
                     ChatBot - In Progress
                   </Link>
                 </li>
-              </ul>
+                </ul>
+                <li>
+                  <br></br>
+                </li>
+                <li>
+              <Settings
+          showSettings={showSettings}
+          setShowSettings={setShowSettings}
+          brightness={brightness}
+          setBrightness={setBrightness}
+          fontSize={fontSize}
+          setFontSize={setFontSize}
+          settingsImage={settings}
+        />
+            </li>
+              
             </li>
           </ul>
         </nav>
@@ -73,15 +90,6 @@ const App = () => {
           </Routes>
         </Suspense>
 
-        <Settings
-          showSettings={showSettings}
-          setShowSettings={setShowSettings}
-          brightness={brightness}
-          setBrightness={setBrightness}
-          fontSize={fontSize}
-          setFontSize={setFontSize}
-          settingsImage={settings}
-        />
       </div>
 
           

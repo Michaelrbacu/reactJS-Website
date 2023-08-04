@@ -49,16 +49,14 @@ const FontSizeSettings = ({ fontSize, setFontSize }) => {
 
 
 const Settings = ({ brightness, setBrightness, fontSize, setFontSize }) => {
-  const [showSettings, setShowSettings] = useState(false); // Add state for visibility
+  const [showSettings, setShowSettings] = useState(false); // Set default state to false
 
   const handleSettingsButtonClick = () => {
-    setShowSettings(!showSettings);
+    setShowSettings(prevState => !prevState); // Toggle the visibility
   };
 
   return (
     <div className="settings">
-      <div class="lines">
-    <div className="content">
       <header>
         <img
           src={settings}
@@ -68,18 +66,20 @@ const Settings = ({ brightness, setBrightness, fontSize, setFontSize }) => {
         />
       </header>
 
-      {/* Render BrightnessSettings and FontSizeSettings only when showSettings is true */}
+      {/* Conditionally render the lines and content div */}
       {showSettings && (
-        <>
-          <BrightnessSettings brightness={brightness} setBrightness={setBrightness} />
-
-          <FontSizeSettings fontSize={fontSize} setFontSize={setFontSize} />
-        </>
+        <div class="lines">
+          <div className="content" style={{ flexDirection: 'column' }}>
+            <BrightnessSettings brightness={brightness} setBrightness={setBrightness} />
+            <FontSizeSettings fontSize={fontSize} setFontSize={setFontSize} />
+          </div>
+        </div>
       )}
-    </div>
-    </div>
     </div>
   );
 };
 
 export default Settings;
+
+
+

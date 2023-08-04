@@ -41,14 +41,16 @@ const Home = () => {
 
           </div>
           <div class="content">
-            <p>On this website, you can find some of the projects I've built. <br /> <br /> Below there is a link to my 
-            github to many of my other projects I've worked on learning other languages.</p>
+            <p>On this website, you can find some of the projects I've built. <br /> <br /> Some of the react apps I've built are showcased on this website for convience. 
+            
+           Other projects will be in my Github</p>
             </div>
           <div class="details">
                 <br />
                   <a href="https://github.com/Michaelrbacu">Github Profile</a>
                   <br />
                   <a href="https://www.linkedin.com/in/michael-bacu-181a551a6/">LinkedIn Profile</a>
+                  
               
           </div>
         <div>

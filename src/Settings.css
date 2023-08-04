@@ -2,7 +2,9 @@
   width: 30px;
   height: 30px;
   cursor: pointer;
-  z-index: 2;
+  z-index: 4;
+  top: 0%;
+  left: 0%;
 }
 
 .settings-popup-container {
@@ -108,7 +110,7 @@ p {
 
 .settings {
   position: absolute;
-  width: 300px;
+  width: 200px;
   height: 300px;
   transition: 0.5s;
 }
@@ -171,4 +173,33 @@ p {
   overflow: hidden;
   position: relative; /* Add position: relative to establish a new stacking context */
   z-index: 2; /* Set a higher z-index to show the content over the grey area */
+}
+
+/* Customize BrightnessSettings and FontSizeSettings */
+.brightness-popup,
+.font-size-popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.brightness-popup h3,
+.font-size-popup h3 {
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.brightness-popup input[type="range"],
+.font-size-popup input[type="range"] {
+  width: 80%;
+  height: 15px;
+  margin-top: 10px;
+}
+
+
+.brightness-popup p,
+.font-size-popup p {
+  color: #ffffff;
+  font-size: 14px;
 }
