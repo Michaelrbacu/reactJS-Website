@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 
-/* Reset styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #1d2229 #fff;
 }
 
-/* Variables */
 :root {
   --one: #a1f65e;
   --two: #524ff5;
@@ -37,6 +37,7 @@ body {
   margin: 0 auto;
 }
 
+
 @media (max-width: 500px) {
   .container {
     width: 95%;
@@ -51,30 +52,26 @@ a {
   text-decoration: none;
 }
 
-/* Header Navigation */
 ul.header {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  overflow: hidden;
   background-color: #333;
-  width: 200px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
 }
 
 li {
-  width: 100%;
+  float: left;
+
 }
 
+
 li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
 li a:hover {
@@ -95,6 +92,7 @@ li a:hover {
 .sections-padding {
   padding: 8rem 0;
 }
+
 
 .main-heading {
   color: var(--white);
@@ -190,33 +188,20 @@ button:hover::before {
   background-color: #111;
 }
 
-/* App Layout */
-.app-container {
-  display: flex;
-  height: 100vh; /* Set height to the full viewport height */
-}
-
-.sidebar {
-  background-color: #333;
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-}
 
 .header {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  height: 100%;
+  height: 60px; /* Set a fixed height for the header */
 }
 
 .header li {
-  width: 100%;
+  margin-right: 10px; /* Adjust the spacing between the list items */
 }
-
 .nav-link {
   color: white;
   text-align: center;
@@ -238,11 +223,6 @@ button:hover::before {
   z-index: 1;
 }
 
-.content-container {
-  flex-grow: 1;
-  position: relative;
-  overflow-y: auto;
-}
 
 .sub-menu {
   display: none;
@@ -250,10 +230,40 @@ button:hover::before {
   padding-left: 15px;
   transition: max-height 0.3s ease-out;
   max-height: 0;
-  overflow: hidden;
+  position: absolute;
+  background-color: #333;
+
 }
 
 .nav-link-container:hover .sub-menu {
   display: block;
   max-height: 150px; 
+}
+
+
+.sub-menu li a {
+  color: white;
+  text-decoration: none;
+}
+
+.sub-menu li a:hover {
+  background-color: #111;
+}
+
+
+html,
+body,
+#root {
+  height: 100%; /* Ensure the root elements have full height */
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Fill the entire viewport height */
+}
+
+.content-container {
+  flex-grow: 1; /* Allow content to fill the remaining height */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
 }

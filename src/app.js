@@ -23,10 +23,28 @@ const App = () => {
   
       return (
       <div className="app-container">
-        <nav className="sidebar">
+        <nav>
           <ul className="header">
-            
-          
+            <li>
+          <Settings
+          showSettings={showSettings}
+          setShowSettings={setShowSettings}
+          brightness={brightness}
+          setBrightness={setBrightness}
+          fontSize={fontSize}
+          setFontSize={setFontSize}
+          settingsImage={settings}
+        />
+            </li>
+              <li>
+                  <br></br>
+                </li>
+                <li>
+                  <br></br>
+                </li>
+                <li>
+                  <br></br>
+                </li>
             <li>
               <Link className="nav-link" to="/home">
                 Home
@@ -56,20 +74,8 @@ const App = () => {
                   </Link>
                 </li>
                 </ul>
-                <li>
-                  <br></br>
-                </li>
-                <li>
-              <Settings
-          showSettings={showSettings}
-          setShowSettings={setShowSettings}
-          brightness={brightness}
-          setBrightness={setBrightness}
-          fontSize={fontSize}
-          setFontSize={setFontSize}
-          settingsImage={settings}
-        />
-            </li>
+                
+                
               
             </li>
           </ul>

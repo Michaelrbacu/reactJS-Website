@@ -48,6 +48,7 @@ const FontSizeSettings = ({ fontSize, setFontSize }) => {
 };
 
 
+
 const Settings = ({ brightness, setBrightness, fontSize, setFontSize }) => {
   const [showSettings, setShowSettings] = useState(false); // Set default state to false
 
