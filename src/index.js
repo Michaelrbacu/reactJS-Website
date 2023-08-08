@@ -3,7 +3,7 @@ import "./index.css";
 import ReactDOM from 'react-dom';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { BrowserRouter as Router } from "react-router-dom";
-import App from "./app";
+import App from "./App";
 
 // Animation
 import AOS from "aos";
