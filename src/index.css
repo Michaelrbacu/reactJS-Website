@@ -232,7 +232,7 @@ button:hover::before {
   max-height: 0;
   position: absolute;
   background-color: #333;
-
+  z-index: 1;
 }
 
 .nav-link-container:hover .sub-menu {

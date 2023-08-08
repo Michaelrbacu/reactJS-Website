@@ -25,17 +25,7 @@ const App = () => {
       <div className="app-container">
         <nav>
           <ul className="header">
-            <li>
-          <Settings
-          showSettings={showSettings}
-          setShowSettings={setShowSettings}
-          brightness={brightness}
-          setBrightness={setBrightness}
-          fontSize={fontSize}
-          setFontSize={setFontSize}
-          settingsImage={settings}
-        />
-            </li>
+            
               <li>
                   <br></br>
                 </li>
@@ -75,9 +65,22 @@ const App = () => {
                 </li>
                 </ul>
                 
-                
+              
               
             </li>
+
+  <li>
+          <Settings
+          showSettings={showSettings}
+          setShowSettings={setShowSettings}
+          brightness={brightness}
+          setBrightness={setBrightness}
+          fontSize={fontSize}
+          setFontSize={setFontSize}
+          settingsImage={settings}
+        />
+            </li>
+
           </ul>
         </nav>
         
