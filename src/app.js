@@ -64,23 +64,18 @@ const App = () => {
                   </Link>
                 </li>
                 </ul>
-                
-              
-              
             </li>
-
-  <li>
-          <Settings
-          showSettings={showSettings}
-          setShowSettings={setShowSettings}
-          brightness={brightness}
-          setBrightness={setBrightness}
-          fontSize={fontSize}
-          setFontSize={setFontSize}
-          settingsImage={settings}
-        />
+                <li>
+              <Settings
+                showSettings={showSettings}
+                setShowSettings={setShowSettings}
+                brightness={brightness}
+                setBrightness={setBrightness}
+                fontSize={fontSize}
+                setFontSize={setFontSize}
+                settingsImage={settings}
+               />
             </li>
-
           </ul>
         </nav>
         
