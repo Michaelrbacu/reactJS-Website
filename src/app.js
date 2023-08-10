@@ -58,11 +58,8 @@ const App = () => {
                     To Do List
                   </Link>
                 </li>
-                <li>
-                  <Link className="nav-link" to="/chatbot">
-                    ChatBot - In Progress
-                  </Link>
-                </li>
+                
+                
                 </ul>
             </li>
                 <li>
