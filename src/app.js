@@ -10,6 +10,7 @@ const Projects = React.lazy(() => import("./components/projects/Projects"));
 const Weather = React.lazy(() => import("./components/weather/Weather"));
 const Todo = React.lazy(() => import("./components/todo/todo"));
 const ChatBot = React.lazy(() => import("./components/bot/chatbot"));
+const GitHubInfo = React.lazy(() => import("./components/github/GitHubInfo"));
 
 const App = () => {
   const location = useLocation();
@@ -42,17 +43,30 @@ const App = () => {
             </li>
             <li>
               <Link className="nav-link" to="/projects">
-                Projects
+                Github Projects
               </Link>
             </li>
+            
             <li className="nav-link-container">
-              <span className="nav-link">React Apps</span>
+              <span className="nav-link">API Projects</span>
               <ul className="sub-menu">
                 <li>
-                  <Link className="nav-link" to="/weather">
+                <Link className="nav-link" to="/api">
+                  Github API
+              </Link>
+                </li>
+                <li>
+                <Link className="nav-link" to="/weather">
                     Weather App
                   </Link>
                 </li>
+                
+                
+                </ul>
+                </li>
+            <li className="nav-link-container">
+              <span className="nav-link">React Apps</span>
+              <ul className="sub-menu">
                 <li>
                   <Link className="nav-link" to="/todo">
                     To Do List
@@ -87,6 +101,7 @@ const App = () => {
             <Route path="/weather" element={<Weather />} />
             <Route path="/todo" element={<Todo />} />
             <Route path="/chatbot" element={<ChatBot />} />
+            <Route path="/api" element={<GitHubInfo />} />
 
           </Routes>
         </Suspense>
