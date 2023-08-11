@@ -11,6 +11,9 @@ const Weather = React.lazy(() => import("./components/weather/Weather"));
 const Todo = React.lazy(() => import("./components/todo/todo"));
 const ChatBot = React.lazy(() => import("./components/bot/chatbot"));
 const GitHubInfo = React.lazy(() => import("./components/github/GitHubInfo"));
+const Nasa = React.lazy(() => import("./components/nasa/nasa"));
+
+
 
 const App = () => {
   const location = useLocation();
@@ -60,7 +63,11 @@ const App = () => {
                     Weather App
                   </Link>
                 </li>
-                
+                <li>
+                <Link className="nav-link" to="/nasa">
+                  NASA API
+              </Link>
+                </li>
                 
                 </ul>
                 </li>
@@ -102,6 +109,7 @@ const App = () => {
             <Route path="/todo" element={<Todo />} />
             <Route path="/chatbot" element={<ChatBot />} />
             <Route path="/api" element={<GitHubInfo />} />
+            <Route path="/nasa" element={<Nasa />} />
 
           </Routes>
         </Suspense>
