@@ -1,10 +1,68 @@
-.repo-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
-  z-index: 1;
-  padding: 1rem;
-  overflow-y: auto;
+/* GitHubInfo.css */
+
+/* Styling for the container */
+.github-info-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  color: #333; /* Set default text color */
+}
+
+/* Styling for the title */
+.github-info-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Styling for links */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Styling for commit details */
+.commit-details {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333; /* Set text color for commit details */
+}
+
+.commit-details h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.commit-details p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.commit-details strong {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Styling for time since last commit */
+.time-since-commit {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+
+.black {
+  color: black;
 }
