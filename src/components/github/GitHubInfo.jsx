@@ -1,65 +1,60 @@
-import { useEffect, useState } from "react";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import "./github.css";
+import React, { useState, useEffect } from 'react';
 
-
-function GitHubInfo() {
-  const [avatarURL, setAvatarURL] = useState();
-  const [githubUsername, setGitHubUsername] = useState();
-  const [repoData, setRepoData] = useState();
-
-  async function repoDataURL() {
-    //Get repo data about github user
-    await fetch("https://api.github.com/users/Michaelrbacu/repos")
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          console.log(36, result);
-          const list = result.map((item) => (
-            <div className="text-center">
-              <a target="_blank" href={item.svn_url}>
-                {item.name}
-              </a>
-            </div>
-          ));
-          setRepoData(list);
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
-  }
+const GitHubInfo = () => {
+  const [repoData, setRepoData] = useState({});
+  const [commitData, setCommitData] = useState({});
+  const [timeSinceLastCommit, setTimeSinceLastCommit] = useState('');
 
   useEffect(() => {
-    fetch("https://api.github.com/users/Michaelrbacu")
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          console.log(result);
-          setAvatarURL(result.avatar_url);
-          setGitHubUsername(result.login);
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
-  }, []);
-  return (
-    <div className="">
-      <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={avatarURL} />
-        <Card.Body>
-          <Card.Title>{githubUsername}</Card.Title>
+    // Fetch repository information
+    fetch('https://api.github.com/repos/Michaelrbacu/reactJS-Website')
+      .then(response => response.json())
+      .then(data => setRepoData(data))
+      .catch(error => console.error('Error fetching repository data:', error));
 
-          <Button variant="primary" onClick={repoDataURL}>
-            List my public repos!
-          </Button>
-        </Card.Body>
-      </Card>
-      {repoData}
+    // Fetch most recent commit
+    fetch('https://api.github.com/repos/Michaelrbacu/reactJS-Website/commits', {
+      headers: {
+        Authorization: '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'
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      setCommitData(data[0]);
+      const lastCommitDate = new Date(data[0].commit.author.date);
+      const now = new Date();
+      const timeDiff = now - lastCommitDate;
+
+      const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+
+      setTimeSinceLastCommit(`${days} days ${hours} hours ${minutes} minutes`);
+    })
+    .catch(error => console.error('Error fetching commit data:', error));
+}, []);
+
+  return (
+    <div>
+      <h1>GitHub Repository Information</h1>
+      <p><strong>Repository Name:</strong> {repoData.name}</p>
+      <p><strong>Description:</strong> {repoData.description}</p>
+      <p><strong>Owner:</strong> {repoData.owner && repoData.owner.login}</p>
+      <p><strong>URL:</strong> <a href={repoData.html_url}>{repoData.html_url}</a></p>
+
+      {commitData.commit && (
+        <div>
+          <h2>Most Recent Commit</h2>
+          <p><strong>Author:</strong> {commitData.commit.author.name}</p>
+          <p><strong>Date:</strong> {commitData.commit.author.date}</p>
+          <p><strong>Message:</strong> {commitData.commit.message}</p>
+          <p><strong>Commit URL:</strong> <a href={commitData.html_url}>{commitData.html_url}</a></p>
+          <p><strong>Time Since Last Commit:</strong> {timeSinceLastCommit}</p>
+
+        </div>
+      )}
     </div>
   );
-}
+};
 
 export default GitHubInfo;
