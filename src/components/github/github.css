@@ -66,3 +66,12 @@ a:hover {
 .black {
   color: black;
 }
+
+.time {
+  display: inline-block;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.time.change {
+  opacity: 0;
+}
