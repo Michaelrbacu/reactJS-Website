@@ -7,7 +7,7 @@ function Todo() {
   const [tasks, setTasks] = useState([]);
   const [taskName, setTaskName] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
-  const [taskImportance, setTaskImportance] = useState("low"); // Default importance
+  const [taskImportance, setTaskImportance] = useState("low"); 
 
   useEffect(() => {
     const storedTasks = localStorage.getItem("tasks");
@@ -97,7 +97,7 @@ function Todo() {
                 src={trash}
                 alt="Delete"
                 className="task-delete"
-                style={{ width: '20px', height: '20px' }} // Adjust the width and height as needed
+                style={{ width: '20px', height: '20px' }}
                 onClick={() => handleDeleteTask(index)}
               />
 
