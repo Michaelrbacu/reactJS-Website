@@ -20,6 +20,8 @@ const App = () => {
   const [showSettings, setShowSettings] = useState(false);
   const [brightness, setBrightness] = useState(100);
   const [fontSize, setFontSize] = useState(16);
+  const [background, setBackground] = useState('url("./background.jpg") no-repeat center center fixed');
+
 
   const handleSettingsButtonClick = () => {
     setShowSettings(!showSettings);
@@ -92,6 +94,8 @@ const App = () => {
                 fontSize={fontSize}
                 setFontSize={setFontSize}
                 settingsImage={settings}
+                setBackground={setBackground} // Pass the setBackground function
+
                />
             </li>
           </ul>

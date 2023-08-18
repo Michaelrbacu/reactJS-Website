@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Settings.css";
+import "./index.css";
 import settings from './settings.png';
 
 const BrightnessSettings = ({ brightness, setBrightness }) => {
@@ -49,12 +49,17 @@ const FontSizeSettings = ({ fontSize, setFontSize }) => {
 
 
 
-const Settings = ({ brightness, setBrightness, fontSize, setFontSize }) => {
+const Settings = ({ brightness, setBrightness, fontSize, setFontSize, setBackground }) => {
   const [showSettings, setShowSettings] = useState(false); // Set default state to false
 
   const handleSettingsButtonClick = () => {
     setShowSettings(prevState => !prevState); // Toggle the visibility
   };
+
+  const handleBackgroundSwitch = () => {
+    document.documentElement.style.setProperty('--background-image', 'url("./background2.jpg")');
+  };
+  
 
   return (
     <div className="settings">
@@ -73,6 +78,7 @@ const Settings = ({ brightness, setBrightness, fontSize, setFontSize }) => {
           <div className="content" style={{ flexDirection: 'column' }}>
             <BrightnessSettings brightness={brightness} setBrightness={setBrightness} />
             <FontSizeSettings fontSize={fontSize} setFontSize={setFontSize} />
+            <button onClick={handleBackgroundSwitch}>Change Theme --in progress</button>
           </div>
         </div>
       )}
@@ -81,6 +87,3 @@ const Settings = ({ brightness, setBrightness, fontSize, setFontSize }) => {
 };
 
 export default Settings;
-
-
-
