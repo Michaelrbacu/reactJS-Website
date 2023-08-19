@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
 
+
 const api = {
-  key: "4f8e795dcd6dbf7b9f5276bff095ffc1",
+  key: process.env.REACT_APP_OPENWEATHERMAP_API_KEY,
   base: "https://api.openweathermap.org/data/2.5/"
 };
 
@@ -153,9 +154,13 @@ function Weather() {
 
 
               <div className="weather-box2">
-                <div>{weather.weather[0].description}</div> 
-              <div>High: {Math.round(weather.main.temp_min*(9/5)+32)} °F  &nbsp; &nbsp; &nbsp; Low: {Math.round(weather.main.temp_max*(9/5)+32)} °F</div> 
-              </div>
+                  <div>{weather.weather[0].description}</div> 
+                  <div>
+                    High: {Math.round((weather.main.temp_max * 9/5) + 32)} °F&nbsp;&nbsp;&nbsp;
+                    Low: {Math.round((weather.main.temp_min * 9/5) + 32)} °F
+                  </div>              
+                </div>
+
                
               <div className="weather-box2">
                             <div>Humidity: {weather.main.humidity} &nbsp; &nbsp;    &nbsp; &nbsp;  Cloudiness: {weather.clouds.all}%</div>
