@@ -136,7 +136,7 @@ function Weather() {
         {(typeof weather.main !== "undefined") ? (
             
           
-          <div>
+        <div className="top-left">
             
             <div className="location-box">
               <div className="location">{weather.name}, {weather.sys.country}</div>
@@ -144,7 +144,7 @@ function Weather() {
             </div>
             <div className="weather-box">
               <div className="temp">
-                {Math.round(weather.main.temp)}°c
+                {Math.round(weather.main.temp)}°C
                 <br></br>
                 {Math.round(weather.main.temp*(9/5)+32)}°F
               </div>
@@ -153,21 +153,18 @@ function Weather() {
 
 
 
-              <div className="weather-box2">
-                  <div>{weather.weather[0].description}</div> 
-                  <div>
-                    High: {Math.round((weather.main.temp_max * 9/5) + 32)} °F&nbsp;&nbsp;&nbsp;
-                    Low: {Math.round((weather.main.temp_min * 9/5) + 32)} °F
-                  </div>              
-                </div>
+              <div className="bottom-row">
+  <div className="weather-box2">
+    <div>{weather.weather[0].description}</div>
+  </div>
+  <div className="weather-box2">
+    <div>Humidity: {weather.main.humidity} &nbsp; &nbsp; Cloudiness: {weather.clouds.all}%</div>
+  </div>
+  <div className="weather-box2">
+    <div>Wind Speed: {weather.wind.speed} &nbsp; &nbsp; Wind Direction: {weather.wind.deg}</div>
+  </div>
+</div>
 
-               
-              <div className="weather-box2">
-                            <div>Humidity: {weather.main.humidity} &nbsp; &nbsp;    &nbsp; &nbsp;  Cloudiness: {weather.clouds.all}%</div>
-              </div>
-              <div className="weather-box2"> 
-                <div>Wind Speed: {weather.wind.speed}  &nbsp; &nbsp; Wind Direction: {weather.wind.deg} </div>
-              </div>
 
 
 </div>

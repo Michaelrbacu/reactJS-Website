@@ -199,3 +199,18 @@
 	text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
   }
   
+  .bottom-row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 20px;
+	border-radius: 16px;
+	margin: 20px auto;
+	box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+	color: #FFF;
+	font-size: 24px;
+	font-weight: 700;
+  }
+  
+  
