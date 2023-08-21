@@ -130,14 +130,12 @@ a:hover {
   margin-top: 20px;
 }
 
-/* Styling for the "Photo credit" text */
 .github-photo-credit {
   color: #007bff;
   cursor: pointer;
   width: fit-content;
 }
 
-/* Styling for the popup */
 .popup {
   position: fixed;
   top: 50%;

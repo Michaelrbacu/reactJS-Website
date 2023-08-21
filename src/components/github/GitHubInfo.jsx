@@ -10,6 +10,7 @@ import repoImg7 from './images/nick-fewings-tfPofukAy3Y-unsplash.jpg';
 import repoImg8 from './images/paul-pastourmatzis-OrRZp6-d8zU-unsplash.jpg';
 import repoImg9 from './images/alberto-restifo-Ni4NgA64TFQ-unsplash.jpg';
 import repoImg10 from './images/w-s-coda-vho6zT9D_c8-unsplash.jpg';
+import { lazy } from 'react';
 
 
 const GitHubInfo = () => {
@@ -91,12 +92,13 @@ const [showPopup, setShowPopup] = useState(false);
   return (
     <div className="github-info-container">
       <h1 className="github-info-title">GitHub Repository Information</h1>
+      <h4>This page will take a few extra seconds to load everything.</h4>
       <div className="github-repo-container">
         {repos.map((repo, index) => (
           <div
             key={repo.id}
             className={`github-repo-box ${expandedRepo === repo ? 'expanded' : ''}`}
-            onClick={() => toggleRepoExpansion(repo)}
+            onClick={() => toggleRepoExpansion(repo)}        
             style={{
               backgroundImage: expandedRepo === repo ? `url(${repoImgArray[index]})` : `url(${repoImgArray[index]})`,
               backgroundSize: 'cover',
@@ -104,7 +106,10 @@ const [showPopup, setShowPopup] = useState(false);
               backgroundPosition: 'center',
               color: expandedRepo === repo ? 'white' : 'black'
             }}
+            loading="lazy"
+
           >
+            
             <p className="white"><strong>Repository Name:</strong> {repo.name}</p>
             {expandedRepo === repo && (
   <div className="github-repo-details">

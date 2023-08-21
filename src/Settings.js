@@ -56,9 +56,11 @@ const Settings = ({ brightness, setBrightness, fontSize, setFontSize, setBackgro
     setShowSettings(prevState => !prevState); // Toggle the visibility
   };
 
+  
   const handleBackgroundSwitch = () => {
     document.documentElement.style.setProperty('--background-image', 'url("./background2.jpg")');
   };
+  
   
 
   return (
