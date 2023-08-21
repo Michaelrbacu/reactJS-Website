@@ -1,39 +1,82 @@
 import React, { useState, useEffect } from 'react';
 import './github.css';
+import repoImg1 from './images/repoimg1.jpg';
+import repoImg2 from './images/darrel-collins-SiCHD6EN3aU-unsplash.jpg';
+import repoImg3 from './images/brigitta-schneiter-g4D9zsI519g-unsplash.jpg';
+import repoImg4 from './images/josh-hild-XKNoL2GQg5o-unsplash.jpg';
+import repoImg5 from './images/leonardo-martins-YNJsgAivf8A-unsplash.jpg';
+import repoImg6 from './images/nick-fewings-hYaWr_9yiJ8-unsplash.jpg';
+import repoImg7 from './images/nick-fewings-tfPofukAy3Y-unsplash.jpg';
+import repoImg8 from './images/paul-pastourmatzis-OrRZp6-d8zU-unsplash.jpg';
+import repoImg9 from './images/alberto-restifo-Ni4NgA64TFQ-unsplash.jpg';
+import repoImg10 from './images/w-s-coda-vho6zT9D_c8-unsplash.jpg';
+
 
 const GitHubInfo = () => {
-  const [repoData, setRepoData] = useState({});
-  const [lastCommitDate, setLastCommitDate] = useState(new Date());
-  const [timeElapsed, setTimeElapsed] = useState(0);
-  const [languages, setLanguages] = useState({});
-  const [contributors, setContributors] = useState([]);
+  const [repos, setRepos] = useState([]);
+  const [expandedRepo, setExpandedRepo] = useState(null);
+  const [timeElapsed, setTimeElapsed] = useState({});
+const repoImgArray = [
+  repoImg1, 
+  repoImg2, 
+  repoImg3, 
+  repoImg4, 
+  repoImg5, 
+  repoImg6, 
+  repoImg7, 
+  repoImg8, 
+  repoImg9, 
+  repoImg10 
+];
+
+const [showPopup, setShowPopup] = useState(false);
+
+
 
   useEffect(() => {
-    fetch('https://api.github.com/repos/Michaelrbacu/reactJS-Website')
-      .then(response => response.json())
-      .then(data => setRepoData(data))
-      .catch(error => console.error('Error fetching repository data:', error));
-
-    fetch('https://api.github.com/repos/Michaelrbacu/reactJS-Website/commits')
+    fetch('https://api.github.com/users/Michaelrbacu/repos')
       .then(response => response.json())
       .then(data => {
-        if (data.length > 0) {
-          const lastCommitDate = new Date(data[0].commit.author.date);
-          setLastCommitDate(lastCommitDate);
-        }
+        setRepos(data);
       })
-      .catch(error => console.error('Error fetching commit data:', error));
+      .catch(error => console.error('Error fetching repository data:', error));
+  }, []);
 
-    fetch(repoData.languages_url)
-      .then(response => response.json())
-      .then(data => setLanguages(data))
-      .catch(error => console.error('Error fetching languages:', error));
+  useEffect(() => {
+    const updateElapsedTime = () => {
+      const now = new Date().getTime();
 
-    fetch(repoData.contributors_url)
-      .then(response => response.json())
-      .then(data => setContributors(data))
-      .catch(error => console.error('Error fetching contributors:', error));
-  }, [repoData.languages_url, repoData.contributors_url]);
+      for (const repo of repos) {
+        if (expandedRepo === repo) {
+          const lastCommitDate = new Date(repo.pushed_at).getTime();
+          if (lastCommitDate) {
+            const timeDiff = now - lastCommitDate;
+            setTimeElapsed(prevTimeElapsed => ({
+              ...prevTimeElapsed,
+              [repo.id]: timeDiff
+            }));
+          }
+        }
+      }
+
+      requestAnimationFrame(updateElapsedTime);
+    };
+
+    updateElapsedTime(); // Initial call
+  }, [expandedRepo, repos]);
+
+  const toggleRepoExpansion = (repo) => {
+    if (expandedRepo === repo) {
+      setExpandedRepo(null);
+    } else {
+      setExpandedRepo(repo);
+    }
+  };
+
+  const togglePopup = () => {
+    setShowPopup(!showPopup);
+  };
+
 
   const formatTime = (time) => {
     const days = Math.floor(time / (1000 * 60 * 60 * 24));
@@ -41,48 +84,96 @@ const GitHubInfo = () => {
     const minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((time % (1000 * 60)) / 1000);
     const milliseconds = time % 1000;
+
     return `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds ${milliseconds} ms`;
   };
-
-  const updateElapsedTime = () => {
-    const now = new Date();
-    const timeDiff = now - lastCommitDate;
-    setTimeElapsed(timeDiff);
-    requestAnimationFrame(updateElapsedTime);
-  };
-
-  useEffect(() => {
-    updateElapsedTime();
-  }, [lastCommitDate]);
 
   return (
     <div className="github-info-container">
       <h1 className="github-info-title">GitHub Repository Information</h1>
-      <p className="black"><strong>Repository Name:</strong> {repoData.name}</p>
-      <p className="black"><strong>Description:</strong> {repoData.description}</p>
-      <p className="black"><strong>Owner:</strong> {repoData.owner && repoData.owner.login}</p>
-      <p className="black"><strong>URL:</strong> <a href={repoData.html_url}>{repoData.html_url}</a></p>
-
-      <div>
-        <h2>Time Since Last Commit</h2>
-        <p className="black"><strong>Last Commit:</strong> {formatTime(timeElapsed)}</p>
+      <div className="github-repo-container">
+        {repos.map((repo, index) => (
+          <div
+            key={repo.id}
+            className={`github-repo-box ${expandedRepo === repo ? 'expanded' : ''}`}
+            onClick={() => toggleRepoExpansion(repo)}
+            style={{
+              backgroundImage: expandedRepo === repo ? `url(${repoImgArray[index]})` : `url(${repoImgArray[index]})`,
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center',
+              color: expandedRepo === repo ? 'white' : 'black'
+            }}
+          >
+            <p className="white"><strong>Repository Name:</strong> {repo.name}</p>
+            {expandedRepo === repo && (
+  <div className="github-repo-details">
+    <h2>Additional Repository Information</h2>
+    <div className="repo-details-grid">
+    <div>
+        <p className="white"><strong>Last Commit:</strong> {formatTime(timeElapsed[repo.id] || 0)}</p>
       </div>
-
       <div>
-        <h2>Additional Repository Information</h2>
-        <p className="black"><strong>Repository Size:</strong> {repoData.size} KB</p>
-        <p className="black"><strong>Stars:</strong> {repoData.stargazers_count}</p>
-        <p className="black"><strong>Forks:</strong> {repoData.forks_count}</p>
-        <p className="black"><strong>Watchers:</strong> {repoData.watchers_count}</p>
-        <p className="black"><strong>Language Breakdown:</strong> {Object.keys(languages).map(lang => `${lang}: ${languages[lang]}`).join(', ')}</p>
-        <p className="black"><strong>Contributors:</strong> {contributors.map(contributor => contributor.login).join(', ')}</p>
-        <p className="black"><strong>Number of Open Issues:</strong> {repoData.open_issues_count}</p>
-        <p className="black"><strong>Number of Pull Requests:</strong> {repoData.open_issues_count}</p>
-        <p className="black"><strong>Default Branch:</strong> {repoData.default_branch}</p>
-        <p className="black"><strong>License:</strong> {repoData.license ? repoData.license.name : 'None'}</p>
-        <p className="black"><strong>Topics:</strong> {repoData.topics ? repoData.topics.join(', ') : 'None'}</p>
-        <p className="black"><strong>Readme Content:</strong> {repoData.description}</p>
+        <strong>Forks:</strong>
+        <p className="white">{repo.forks_count}</p>
       </div>
+      <div>
+        <strong>Watchers:</strong>
+        <p className="white">{repo.watchers_count}</p>
+      </div>
+      <div>
+        <strong>Open Issues:</strong>
+        <p className="white">{repo.open_issues_count}</p>
+      </div>
+      <div>
+        <strong>Pull Requests:</strong>
+        <p className="white">{repo.open_issues_count}</p>
+      </div>
+      <div>
+        <strong>Default Branch:</strong>
+        <p className="white">{repo.default_branch}</p>
+      </div>
+      <div>
+        <strong>License:</strong>
+        <p className="white">{repo.license ? repo.license.name : 'None'}</p>
+      </div>
+      <div>
+        <strong>Topics:</strong>
+        <p className="white">{repo.topics ? repo.topics.join(', ') : 'None'}</p>
+      </div>
+      <div>
+        <strong>Readme Content:</strong>
+        <p className="white">{repo.description}</p>
+      </div>
+    </div>
+  </div>
+)}
+
+          </div>
+        ))}
+      </div>   
+      <footer className="github-footer">
+        <p className="github-photo-credit" onClick={togglePopup}>
+          Photo credit
+        </p>
+      </footer>
+
+      {showPopup && (
+        <div className="popup">
+          <p className="black"><a href="https://unsplash.com/photos/Jztmx9yqjBw" target="_blank" rel="noopener noreferrer">Image 1</a></p>
+          <p className="black"><a href="https://unsplash.com/photos/SiCHD6EN3aU" target="_blank" rel="noopener noreferrer">Image 2</a></p>
+          <p className="black"><a href="https://unsplash.com/photos/g4D9zsI519g" target="_blank" rel="noopener noreferrer">Image 3</a></p>
+          <p className="black"><a href="https://unsplash.com/photos/XKNoL2GQg5o" target="_blank" rel="noopener noreferrer">Image 4</a></p>
+          <p className="black"><a href="https://unsplash.com/photos/YNJsgAivf8A" target="_blank" rel="noopener noreferrer">Image 5</a></p>
+          <p className="black"><a href="https://unsplash.com/photos/hYaWr_9yiJ8" target="_blank" rel="noopener noreferrer">Image 6</a></p>
+          <p className="black"><a href="https://unsplash.com/photos/tfPofukAy3Y" target="_blank" rel="noopener noreferrer">Image 7</a></p>
+          <p className="black"><a href="https://unsplash.com/photos/OrRZp6-d8zU" target="_blank" rel="noopener noreferrer">Image 8</a></p>
+          <p className="black"><a href="https://unsplash.com/photos/Ni4NgA64TFQ" target="_blank" rel="noopener noreferrer">Image 9</a></p>
+          <p className="black"><a href="https://unsplash.com/photos/vho6zT9D_c8" target="_blank" rel="noopener noreferrer">Image 10</a></p>
+        </div>
+
+        
+      )}
     </div>
   );
 };
