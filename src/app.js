@@ -1,6 +1,5 @@
 import React, { useState, Suspense } from "react";
 import { Route, Routes, Link, useLocation, Navigate } from "react-router-dom";
-
 import "./index.css";
 import "./components/weather/weather.css";
 import Home from "./components/home/Home";
