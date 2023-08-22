@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Page Not Found</title>
+</head>
+<body>
+  <script>
+    const path = window.location.pathname;
+    if (path !== '/' && path.endsWith('/')) {
+      const newPath = path.substring(0, path.length - 1);
+      window.location.replace(newPath);
+    } else {
+      const root = document.createElement('div');
+      document.body.appendChild(root);
+      root.innerHTML = 'Page Not Found. Redirecting...';
+      const newUrl = path === '/' ? '/index.html' : path + '/index.html';
+      window.location.replace(newUrl);
+    }
+  </script>
+</body>
+</html>
