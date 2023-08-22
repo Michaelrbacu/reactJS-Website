@@ -1,5 +1,6 @@
 import React, { useState, Suspense } from "react";
 import { Route, Routes, Link, useLocation, Navigate } from "react-router-dom";
+
 import "./index.css";
 import "./components/weather/weather.css";
 import Home from "./components/home/Home";
@@ -46,12 +47,12 @@ const App = () => {
                   <br></br>
                 </li>
             <li>
-              <Link className="nav-link" to="/reactJS-Website/home">
+              <Link className="nav-link" to="/home">
                 Home
               </Link>
             </li>
             <li>
-              <Link className="nav-link" to="/reactJS-Website/projects">
+              <Link className="nav-link" to="/projects">
                 Github Projects
               </Link>
             </li>
@@ -60,17 +61,17 @@ const App = () => {
               <span className="nav-link">API Projects</span>
               <ul className="sub-menu">
                 <li>
-                <Link className="nav-link" to="/reactJS-Website/api">
+                <Link className="nav-link" to="/api">
                   Github API
               </Link>
                 </li>
                 <li>
-                <Link className="nav-link" to="/reactJS-Website/weather">
+                <Link className="nav-link" to="/weather">
                     Weather App
                   </Link>
                 </li>
                 <li>
-                <Link className="nav-link" to="/reactJS-Website/nasa">
+                <Link className="nav-link" to="/nasa">
                   NASA API
               </Link>
                 </li>
@@ -81,7 +82,7 @@ const App = () => {
               <span className="nav-link">React Apps</span>
               <ul className="sub-menu">
                 <li>
-                  <Link className="nav-link" to="/reactJS-Website/todo">
+                  <Link className="nav-link" to="/todo">
                     To Do List
                   </Link>
                 </li>
@@ -110,13 +111,13 @@ const App = () => {
         <div className="content-container">
   <Suspense fallback={<div>Loading...</div>}>
   <Routes location={location}>
-      <Route path="/reactJS-Website/home" element={<Home />} />
-      <Route path="/reactJS-Website/projects" element={<Projects />} />
-      <Route path="/reactJS-Website/weather" element={<Weather />} />
-      <Route path="/reactJS-Website/todo" element={<Todo />} />
-      <Route path="/reactJS-Website/chatbot" element={<ChatBot />} />
-      <Route path="/reactJS-Website/api" element={<GitHubInfo />} />
-      <Route path="/reactJS-Website/nasa" element={<Nasa />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/projects" element={<Projects />} />
+      <Route path="/weather" element={<Weather />} />
+      <Route path="/todo" element={<Todo />} />
+      <Route path="/chatbot" element={<ChatBot />} />
+      <Route path="/api" element={<GitHubInfo />} />
+      <Route path="/nasa" element={<Nasa />} />
       <Route path="*" element={<Navigate to="/home" />} />
       </Routes>
   </Suspense>
