@@ -1,10 +1,15 @@
-import React, { useState, Suspense } from "react"; // Import Suspense from 'react'
-import { Route, Routes, Link, useLocation } from "react-router-dom";
+import React, { useState, Suspense } from "react";
+import { Route, Routes, Link, useLocation, Navigate } from "react-router-dom";
+
 import "./index.css";
 import "./components/weather/weather.css";
 import Home from "./components/home/Home";
 import Settings from "./Settings";
 import settings from './settings.png';
+
+
+
+
 
 const Projects = React.lazy(() => import("./components/projects/Projects"));
 const Weather = React.lazy(() => import("./components/weather/Weather"));
@@ -103,22 +108,21 @@ const App = () => {
         
 
 
-      <div className="content-container">
+        <div className="content-container">
+  <Suspense fallback={<div>Loading...</div>}>
+  <Routes location={location}>
+      <Route path="/home" element={<Home />} />
+      <Route path="/projects" element={<Projects />} />
+      <Route path="/weather" element={<Weather />} />
+      <Route path="/todo" element={<Todo />} />
+      <Route path="/chatbot" element={<ChatBot />} />
+      <Route path="/api" element={<GitHubInfo />} />
+      <Route path="/nasa" element={<Nasa />} />
+      <Route path="*" element={<Navigate to="/home" />} />
+      </Routes>
+  </Suspense>
+</div>
 
-        <Suspense fallback={<div>Loading...</div>}>
-          <Routes location={location}>
-            <Route path="/home" element={<Home />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/weather" element={<Weather />} />
-            <Route path="/todo" element={<Todo />} />
-            <Route path="/chatbot" element={<ChatBot />} />
-            <Route path="/api" element={<GitHubInfo />} />
-            <Route path="/nasa" element={<Nasa />} />
-
-          </Routes>
-        </Suspense>
-
-      </div>
 
           
 
