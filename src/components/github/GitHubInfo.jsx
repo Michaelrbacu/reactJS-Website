@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './github.css';
-import repoImg1 from './images/repoimg1.jpg';
-import repoImg2 from './images/darrel-collins-SiCHD6EN3aU-unsplash.jpg';
-import repoImg3 from './images/brigitta-schneiter-g4D9zsI519g-unsplash.jpg';
-import repoImg4 from './images/josh-hild-XKNoL2GQg5o-unsplash.jpg';
-import repoImg5 from './images/leonardo-martins-YNJsgAivf8A-unsplash.jpg';
-import repoImg6 from './images/nick-fewings-hYaWr_9yiJ8-unsplash.jpg';
-import repoImg7 from './images/nick-fewings-tfPofukAy3Y-unsplash.jpg';
-import repoImg8 from './images/paul-pastourmatzis-OrRZp6-d8zU-unsplash.jpg';
-import repoImg9 from './images/alberto-restifo-Ni4NgA64TFQ-unsplash.jpg';
-import repoImg10 from './images/w-s-coda-vho6zT9D_c8-unsplash.jpg';
+import repoImg1 from './repoimg1.jpg';
+import repoImg2 from './darrel-collins-SiCHD6EN3aU-unsplash.jpg';
+import repoImg3 from './brigitta-schneiter-g4D9zsI519g-unsplash.jpg';
+import repoImg4 from './josh-hild-XKNoL2GQg5o-unsplash.jpg';
+import repoImg5 from './leonardo-martins-YNJsgAivf8A-unsplash.jpg';
+import repoImg6 from './nick-fewings-hYaWr_9yiJ8-unsplash.jpg';
+import repoImg7 from './nick-fewings-tfPofukAy3Y-unsplash.jpg';
+import repoImg8 from './paul-pastourmatzis-OrRZp6-d8zU-unsplash.jpg';
+import repoImg9 from './alberto-restifo-Ni4NgA64TFQ-unsplash.jpg';
+import repoImg10 from './w-s-coda-vho6zT9D_c8-unsplash.jpg';
 import { lazy } from 'react';
 
 
