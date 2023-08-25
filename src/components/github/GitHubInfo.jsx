@@ -10,6 +10,7 @@ import repoImg7 from './nick-fewings-tfPofukAy3Y-unsplash.jpg';
 import repoImg8 from './paul-pastourmatzis-OrRZp6-d8zU-unsplash.jpg';
 import repoImg9 from './alberto-restifo-Ni4NgA64TFQ-unsplash.jpg';
 import repoImg10 from './w-s-coda-vho6zT9D_c8-unsplash.jpg';
+import repoImg11 from './premium_photo-1673240367277-e1d394465b56.jpg';
 import { lazy } from 'react';
 
 
@@ -27,7 +28,8 @@ const repoImgArray = [
   repoImg7, 
   repoImg8, 
   repoImg9, 
-  repoImg10 
+  repoImg10,
+  repoImg11
 ];
 
 const [showPopup, setShowPopup] = useState(false);
@@ -175,6 +177,8 @@ const [showPopup, setShowPopup] = useState(false);
           <p className="black"><a href="https://unsplash.com/photos/OrRZp6-d8zU" target="_blank" rel="noopener noreferrer">Image 8</a></p>
           <p className="black"><a href="https://unsplash.com/photos/Ni4NgA64TFQ" target="_blank" rel="noopener noreferrer">Image 9</a></p>
           <p className="black"><a href="https://unsplash.com/photos/vho6zT9D_c8" target="_blank" rel="noopener noreferrer">Image 10</a></p>
+          <p className="black"><a href="https://unsplash.com/photos/7VotVatHM7Q" target="_blank" rel="noopener noreferrer">Image 11</a></p>
+
         </div>
 
         
