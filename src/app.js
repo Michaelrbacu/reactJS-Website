@@ -7,18 +7,12 @@ import Home from "./components/home/Home";
 import Settings from "./Settings";
 import settings from './settings.png';
 
-
-
-
-
 const Projects = React.lazy(() => import("./components/projects/Projects"));
 const Weather = React.lazy(() => import("./components/weather/Weather"));
 const Todo = React.lazy(() => import("./components/todo/todo"));
 const ChatBot = React.lazy(() => import("./components/bot/chatbot"));
 const GitHubInfo = React.lazy(() => import("./components/github/GitHubInfo"));
 const Nasa = React.lazy(() => import("./components/nasa/nasa"));
-
-
 
 const App = () => {
   const location = useLocation();
@@ -36,7 +30,6 @@ const App = () => {
       <div className="app-container">
         <nav>
           <ul className="header">
-            
               <li>
                   <br></br>
                 </li>
@@ -56,7 +49,6 @@ const App = () => {
                 Github Projects
               </Link>
             </li>
-            
             <li className="nav-link-container">
               <span className="nav-link">API Projects</span>
               <ul className="sub-menu">
@@ -86,8 +78,6 @@ const App = () => {
                     To Do List
                   </Link>
                 </li>
-                
-                
                 </ul>
             </li>
                 <li>
@@ -105,9 +95,6 @@ const App = () => {
             </li>
           </ul>
         </nav>
-        
-
-
         <div className="content-container">
   <Suspense fallback={<div>Loading...</div>}>
   <Routes location={location}>
@@ -122,9 +109,6 @@ const App = () => {
       </Routes>
   </Suspense>
 </div>
-
-
-          
 
     </div>
   );
