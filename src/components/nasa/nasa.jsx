@@ -125,7 +125,7 @@ const Nasa = () => {
 
 
   return (
-    <div>
+    <div id="nasa-section">
       <h1>NASA API Features</h1>
       <div>
         <h2>Choose an API feature:</h2>
