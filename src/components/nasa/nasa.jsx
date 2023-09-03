@@ -127,26 +127,29 @@ const Nasa = () => {
   return (
     <div id="nasa-section">
       <h1>NASA API Features</h1>
-      <div>
-        <h2>Choose an API feature:</h2>
-        <ul>
-          {apiEndpoints.map(api => (
-            <li key={api}>
-              <button onClick={() => handleApiChange(api)}>{api}</button>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <div className="api-list">
+  <h2>Choose an API feature:</h2>
+  <ul>
+    {apiEndpoints.map(api => (
+      <li key={api}>
+        <button onClick={() => handleApiChange(api)}>{api}</button>
+      </li>
+    ))}
+  </ul>
+</div>
+
             <div>
             {currentApi === 'apod' && (
         <div className="api-feature">
           <h2>Astronomy Picture of the Day</h2>
           <div className="api-content">
-            <div className="api-image">
+
+            <div className="api-image"> 
+             <h1 className='apodtitle'>Title: {apodData.title}</h1>
+
               <img src={apodData.url} alt={apodData.title} />
             </div>
             <div className="api-description">
-              <p>Title: {apodData.title}</p>
               <p>Explanation: {apodData.explanation}</p>
             </div>
           </div>
@@ -236,19 +239,24 @@ const Nasa = () => {
   </div>
 )}
 
-{currentApi === 'eonetData' && eonetData && (
+{currentApi === 'eonetData' && (
   <div>
     <h2>Earth Observatory Natural Event Tracker (EONET)</h2>
-    <ul>
-      {eonetData.map((event, index) => (
-        <li key={index}>
-          <p>Event Title: {event.title}</p>
-          <p>Category: {event.categories[0].title}</p>
-        </li>
-      ))}
-    </ul>
+    {eonetData && eonetData.length > 0 ? (
+      <ul>
+        {eonetData.map((event, index) => (
+          <li key={index}>
+            <p>Event Title: {event.title}</p>
+            <p>Category: {event.categories[0].title}</p>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p>No data available for this API.</p>
+    )}
   </div>
 )}
+
 
 {currentApi === 'issLocation' && issLocation && (
   <div>
