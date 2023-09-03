@@ -4,6 +4,27 @@ body {
   padding: 0;
 }
 
+.api-section {
+  background-image: url('./nasabg.jpg'); /* Add your background image URL here */
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white; /* Set text color to white */
+  padding: 20px; /* Adjust padding as needed */
+  position: relative; /* Create a relative positioning context */
+}
+
+.api-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+  z-index: -1; /* Place the overlay behind the content */
+}
+
+
 /* Set a separate background for the NASA section */
 #nasa-section {
   background-image: url('./nasabg.jpg');
@@ -15,6 +36,38 @@ body {
   color: #ffffff;
 }
 
+.api-feature {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Style the API feature heading */
+.api-feature h2 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+/* Structure the API content with an image and description */
+.api-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style the API image */
+.api-image img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #0077b6;
+  border-radius: 5px;
+}
+
+/* Style the API description */
+.api-description {
+  text-align: left;
+  margin-top: 10px;
+  color: #ffffff; /* Set text color to white */
+}
 
 .container {
   max-width: 800px;
@@ -75,7 +128,32 @@ img {
   cursor: pointer;
 }
 
-/* Set text color to white for all text elements */
 p, li {
   color: #ffffff;
 }
+
+
+.neo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.neo-item {
+  background-color: black;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.neo-item h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.neo-item p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+

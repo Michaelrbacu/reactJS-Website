@@ -137,25 +137,41 @@ const Nasa = () => {
           ))}
         </ul>
       </div>
-      <div>
-  {currentApi === 'apod' && (
-    <div>
-      <h2>Astronomy Picture of the Day</h2>
-      <p>Title: {apodData.title}</p>
-      <img src={apodData.url} alt={apodData.title} style={{ maxWidth: '100%' }} />
-      <p>Explanation: {apodData.explanation}</p>
-    </div>
-  )}
-  {currentApi === 'neo' && (
-    <div>
-      <h2>Near Earth Objects</h2>
-      <ul>
-        {neoData.near_earth_objects && neoData.near_earth_objects.map((item, index) => (
-          <li key={index}>{item.name}</li>
-        ))}
-      </ul>
-    </div>
-  )}
+            <div>
+            {currentApi === 'apod' && (
+        <div className="api-feature">
+          <h2>Astronomy Picture of the Day</h2>
+          <div className="api-content">
+            <div className="api-image">
+              <img src={apodData.url} alt={apodData.title} />
+            </div>
+            <div className="api-description">
+              <p>Title: {apodData.title}</p>
+              <p>Explanation: {apodData.explanation}</p>
+            </div>
+          </div>
+        </div>
+      )}
+        {currentApi === 'neo' && (
+          <div className="api-section">
+          <h2>Near Earth Objects</h2>
+          <ul className="gallery">
+              {neoData.near_earth_objects &&
+                neoData.near_earth_objects.map((item, index) => (
+                  <li key={index} className="neo-item">
+                    <h3>Name: {item.name}</h3>
+                    <p>Reference ID: {item.neo_reference_id}</p>
+                    <p>Close Approach Date: {item.close_approach_data[0].close_approach_date}</p>
+                    <p>Miss Distance: {item.close_approach_data[0].miss_distance.kilometers} km</p>
+                    <p>Relative Velocity: {item.close_approach_data[0].relative_velocity.kilometers_per_hour} km/h</p>
+                  </li>
+                ))}
+            </ul>
+          </div>
+        )}
+
+
+
 {currentApi === 'marsRoverPhotos' && (
   <div>
     <h2>Mars Rover Photos</h2>
@@ -212,15 +228,15 @@ const Nasa = () => {
   </div>
 )}
 
-  {currentApi === 'insightData' && (
-    <div>
-      <h2>InSight Mars Lander Data</h2>
-      <p>Season: {insightData.season}</p>
-      <p>Average Temperature: {insightData.average_temp}</p>
-    </div>
-  )}
+{currentApi === 'insightData' && insightData && (
+  <div>
+    <h2>InSight Mars Lander Data</h2>
+    <p>Season: {insightData.season}</p>
+    <p>Average Temperature: {insightData.average_temp}</p>
+  </div>
+)}
 
-{currentApi === 'eonetData' && (
+{currentApi === 'eonetData' && eonetData && (
   <div>
     <h2>Earth Observatory Natural Event Tracker (EONET)</h2>
     <ul>
@@ -233,14 +249,16 @@ const Nasa = () => {
     </ul>
   </div>
 )}
-{currentApi === 'issLocation' && (
+
+{currentApi === 'issLocation' && issLocation && (
   <div>
     <h2>International Space Station (ISS) Location</h2>
     <p>Latitude: {issLocation.latitude}</p>
     <p>Longitude: {issLocation.longitude}</p>
   </div>
 )}
-{currentApi === 'keplerExoplanetData' && (
+
+{currentApi === 'keplerExoplanetData' && keplerExoplanetData && (
   <div>
     <h2>Kepler Exoplanet Data</h2>
     <ul>
@@ -253,7 +271,8 @@ const Nasa = () => {
     </ul>
   </div>
 )}
-{currentApi === 'sdoData' && (
+
+{currentApi === 'sdoData' && sdoData && (
   <div>
     <h2>Solar Dynamics Observatory (SDO) Data</h2>
     <ul>
@@ -266,7 +285,8 @@ const Nasa = () => {
     </ul>
   </div>
 )}
-{currentApi === 'donkiData' && (
+
+{currentApi === 'donkiData' && donkiData && (
   <div>
     <h2>Space Weather Database of Notifications, Knowledge, Information (DONKI)</h2>
     <ul>
@@ -283,7 +303,7 @@ const Nasa = () => {
   </div>
 )}
 
-{currentApi === 'geneLabData' && (
+{currentApi === 'geneLabData' && geneLabData && (
   <div>
     <h2>GeneLab Data</h2>
     <ul>
@@ -296,6 +316,7 @@ const Nasa = () => {
     </ul>
   </div>
 )}
+
 
       </div>
     </div>
