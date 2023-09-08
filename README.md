@@ -1,4 +1,4 @@
 # reactJS-Website
 
 
-https://michaelrbacu.github.io/home
+michaelrbacu.github.io/reactJS-Website
