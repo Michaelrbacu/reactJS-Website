@@ -21,12 +21,19 @@ const App = () => {
   const [fontSize, setFontSize] = useState(16);
   const [background, setBackground] = useState('url("./background.jpg") no-repeat center center fixed');
 
+  useEffect(() => {
+    window.onbeforeunload = () => {
+      window.location.href = '/reactJS-website';
+    };
+  }, []);
+
 
   const handleSettingsButtonClick = () => {
     setShowSettings(!showSettings);
   };
   
       return (
+        
       <div className="app-container">
         <nav>
           <ul className="header">
@@ -108,9 +115,16 @@ const App = () => {
       <Route path="*" element={<Navigate to="/home" />} />
       </Routes>
   </Suspense>
+
+
+
+
 </div>
 
     </div>
+  
+
+
   );
 };
 
