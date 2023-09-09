@@ -23,7 +23,7 @@ const App = () => {
 
   useEffect(() => {
     window.onbeforeunload = () => {
-      window.location.href = '/reactJS-website';
+      window.location.href = 'https://michaelrbacu.github.io/reactJS-Website/';
     };
   }, []);
 
