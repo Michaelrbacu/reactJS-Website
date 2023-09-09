@@ -21,13 +21,6 @@ const App = () => {
   const [fontSize, setFontSize] = useState(16);
   const [background, setBackground] = useState('url("./background.jpg") no-repeat center center fixed');
 
-  useEffect(() => {
-    window.onbeforeunload = () => {
-      window.location.href = 'https://michaelrbacu.github.io/reactJS-Website/';
-    };
-  }, []);
-
-
   const handleSettingsButtonClick = () => {
     setShowSettings(!showSettings);
   };
