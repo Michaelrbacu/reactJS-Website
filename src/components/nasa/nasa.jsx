@@ -4,7 +4,6 @@ import 'react-image-lightbox/style.css';
 import "./nasa.css";
 
 const Nasa = () => {
-  // State variables for different data and settings
   const [lightboxIndex, setLightboxIndex] = useState(0); // Index for the image lightbox
   const [lightboxOpen, setLightboxOpen] = useState(false); // Flag to control the lightbox visibility
   const [apodData, setApodData] = useState({}); // Astronomy Picture of the Day data
@@ -20,10 +19,8 @@ const Nasa = () => {
   const [donkiData, setDonkiData] = useState([]); // Space Weather Database of Notifications, Knowledge, Information (DONKI) data
   const [geneLabData, setGeneLabData] = useState([]); // GeneLab data
 
-  // Current API being displayed
   const [currentApi, setCurrentApi] = useState('apod');
   
-  // List of available API endpoints
   const apiEndpoints = [
     'apod', 'neo', 'marsRoverPhotos', 'exoplanetData', 'epic',
     'insightData', 'eonetData', 'issLocation', 'keplerExoplanetData',
@@ -34,14 +31,77 @@ const Nasa = () => {
   const fetchData = (api) => {
     switch (api) {
       case 'apod':
-        // Fetch Astronomy Picture of the Day data
         fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_API_KEY}`)
           .then(response => response.json())
           .then(data => setApodData(data))
           .catch(error => console.error('Error fetching APOD data:', error));
         break;
-      // Add similar cases for other APIs
-      // ...
+        case 'neo':
+          fetch(`https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=${process.env.REACT_APP_NASA_API_KEY}`)
+            .then(response => response.json())
+            .then(data => setNeoData(data))
+            .catch(error => console.error('Error fetching NEO data:', error));
+          break;
+        case 'marsRoverPhotos':
+          fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${process.env.REACT_APP_NASA_API_KEY}`)
+            .then(response => response.json())
+            .then(data => setMarsRoverPhotos(data.photos))
+            .catch(error => console.error('Error fetching Mars Rover Photos data:', error));
+          break;
+        case 'exoplanetData':
+          fetch(`https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&format=json`)
+            .then(response => response.json())
+            .then(data => setExoplanetData(data))
+            .catch(error => console.error('Error fetching Exoplanet Archive data:', error));
+          break;
+        case 'epic':
+          fetch(`https://api.nasa.gov/EPIC/api/natural/images?api_key=${process.env.REACT_APP_NASA_API_KEY}`)
+            .then(response => response.json())
+            .then(data => setEpicData(data))
+            .catch(error => console.error('Error fetching EPIC data:', error));
+          break;
+        case 'insightData':
+          fetch(`https://api.nasa.gov/insight_weather/?api_key=${process.env.REACT_APP_NASA_API_KEY}&feedtype=json&ver=1.0`)
+            .then(response => response.json())
+            .then(data => setInsightData(data))
+            .catch(error => console.error('Error fetching InSight data:', error));
+          break;
+        case 'eonetData':
+          fetch(`https://eonet.sci.gsfc.nasa.gov/api/v2.1/events`)
+            .then(response => response.json())
+            .then(data => setEonetData(data.events))
+            .catch(error => console.error('Error fetching EONET data:', error));
+          break;
+        case 'issLocation':
+          fetch(`https://api.wheretheiss.at/v1/satellites/25544`)
+            .then(response => response.json())
+            .then(data => setIssLocation(data))
+            .catch(error => console.error('Error fetching ISS Location data:', error));
+          break;
+        case 'keplerExoplanetData':
+          fetch(`https://api.nasa.gov/kepler/api/systems/223`)
+            .then(response => response.json())
+            .then(data => setKeplerExoplanetData(data))
+            .catch(error => console.error('Error fetching Kepler Exoplanet data:', error));
+          break;
+        case 'sdoData':
+          fetch(`https://api.nasa.gov/dsn/api/solar_system_bodies/?limit=5`)
+            .then(response => response.json())
+            .then(data => setSdoData(data))
+            .catch(error => console.error('Error fetching SDO data:', error));
+          break;
+        case 'donkiData':
+          fetch(`https://api.nasa.gov/donki/notifications?type=all&api_key=${process.env.REACT_APP_NASA_API_KEY}`)
+            .then(response => response.json())
+            .then(data => setDonkiData(data))
+            .catch(error => console.error('Error fetching Donki data:', error));
+          break;
+        case 'geneLabData':
+          fetch(`https://genelab-data.ndc.nasa.gov/genelab/data/genes/?limit=5`)
+            .then(response => response.json())
+            .then(data => setGeneLabData(data))
+            .catch(error => console.error('Error fetching GeneLab data:', error));
+          break;
       default:
         break;
     }
@@ -68,7 +128,6 @@ const Nasa = () => {
     setLightboxOpen(false);
   };
 
-  // JSX code for rendering the component
   return (
     <div id="nasa-section">
       <h1>NASA API Features</h1>

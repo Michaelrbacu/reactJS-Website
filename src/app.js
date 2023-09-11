@@ -98,15 +98,15 @@ const App = () => {
         <div className="content-container">
   <Suspense fallback={<div>Loading...</div>}>
   <Routes location={location}>
-      <Route path="/home" element={<Home />} />
-      <Route path="/projects" element={<Projects />} />
-      <Route path="/weather" element={<Weather />} />
-      <Route path="/todo" element={<Todo />} />
-      <Route path="/chatbot" element={<ChatBot />} />
-      <Route path="/api" element={<GitHubInfo />} />
-      <Route path="/nasa" element={<Nasa />} />
-      <Route path="*" element={<Navigate to="/home" />} />
-      </Routes>
+  <Route path="/home" element={<Home />} />
+  <Route path="/projects" element={<Projects />} />
+  <Route path="/weather" element={<Weather />} />
+  <Route path="/api" element={<GitHubInfo />} />
+  <Route path="/nasa" element={<Nasa />} />
+  <Route path="/todo" element={<Todo />} />
+  <Route path="*" element={<Navigate to="/home" />} />
+</Routes>
+
   </Suspense>
 
 
