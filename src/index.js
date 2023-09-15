@@ -11,7 +11,7 @@ import "aos/dist/aos.css";
 
 AOS.init();
 
-
+//Changed to HashRouter because BrowserRouter caused 404 errors on refresh.
 ReactDOM.render(
   <HashRouter>
     <App />
