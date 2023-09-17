@@ -66,7 +66,7 @@ li {
 li a:hover {
     background-color: #111;
 }
-/* Main Section Styling */
+
 .margin-sections {
     margin-top: 90px;
 }
@@ -99,7 +99,7 @@ li a:hover {
     background-size: cover;
     background-repeat: no-repeat;
 }
-/* Global Styles For All Buttons */
+
 button {
     position: relative;
     padding: 10px 20px;
@@ -126,7 +126,7 @@ button::before {
 button:hover::before {
     width: 100%;
 }
-/* Paragraph Styling */
+
 .paragraph {
     margin-bottom: 5px;
     letter-spacing: 2px;
@@ -170,11 +170,9 @@ button:hover::before {
     flex-direction: row;
     align-items: center;
     height: 60px;
-    /* Set a fixed height for the header */
 }
 .header li {
     margin-right: 10px;
-    /* Adjust the spacing between the list items */
 }
 .nav-link {
     color: white;
@@ -219,19 +217,15 @@ html,
 body, 
 #root {
     height: 100%;
-    /* Ensure the root elements have full height */
 }
 .app-container {
     display: flex;
     flex-direction: column;
     height: 100%;
-    /* Fill the entire viewport height */
 }
 .content-container {
     flex-grow: 1;
-    /* Allow content to fill the remaining height */
     overflow-y: auto;
-    /* Enable vertical scrolling if content overflows */
 }
 .settings-icon {
     width: 30px;
@@ -251,12 +245,9 @@ body,
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
-    /* Semi-transparent background overlay */
     z-index: 1;
     opacity: 0;
-    /* Hide the container by default */
     pointer-events: none;
-    /* Disable pointer events by default */
 }
 .settings-popup {
     background-color: #fff;
@@ -267,16 +258,12 @@ body,
 }
 .settings.show .settings-popup-container {
     opacity: 1;
-    /* Show the container when settings are clicked */
     pointer-events: auto;
-    /* Enable pointer events when settings are open */
 }
 .settings.show {
     pointer-events: none;
-    /* Disable clicking on the settings icon while popups are open */
     z-index: 3;
 }
-/* Optional styling for the input range sliders */
 input[type="range"] {
     width: 100%;
     height: 15px;
@@ -311,12 +298,9 @@ input[type="range"]::-moz-range-track {
     border: none;
     border-radius: 5px;
 }
-/* Settings.css */
-/* Define a CSS class for the base font size */
 :root {
     --base-font-size: 16px;
 }
-/* Use rem units for font size throughout your CSS */
 body {
     font-size: var(--base-font-size);
 }
@@ -328,8 +312,7 @@ p {
     font-size: calc(var(--base-font-size) * 1.2);
     color: #ffffff;
 }
-/* ... (other elements with font-size properties) ... */
-/* ... (existing styles) ... */
+
 .settings {
     position: absolute;
     width: 200px;
@@ -375,9 +358,7 @@ p {
     align-items: center;
     overflow: hidden;
     position: relative;
-    /* Add position: relative to establish a new stacking context */;
     z-index: 2;
-    /* Set a higher z-index to show the content over the grey area */
 }
 .settings .details {
     width: 100%;
@@ -387,11 +368,9 @@ p {
     align-items: flex-end ;
     overflow: hidden;
     position: relative;
-    /* Add position: relative to establish a new stacking context */;
     z-index: 2;
-    /* Set a higher z-index to show the content over the grey area */
 }
-/* Customize BrightnessSettings and FontSizeSettings */
+
 .brightness-popup, 
 .font-size-popup {
     display: flex;
