@@ -41,7 +41,7 @@ const Home = () => {
 
           </div>
           <div class="content">
-            <p>On this website, you can find some of the projects I've built practicing React.<br /> <br /> They are showcased on this website for convenience. 
+            <p>On this website, you can find some of the projects I've built or am building practicing React.<br /> <br /> They are showcased on this website for convenience. 
             
            Other projects will be in my Github</p>
             </div>
