@@ -57,7 +57,7 @@ const Home = () => {
         </div>
         
       </div>
-      {/* The rest of your JSX code remains unchanged... */}
+      {/**/}
     </div>
   
   );
