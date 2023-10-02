@@ -89,7 +89,7 @@ const App = () => {
                 fontSize={fontSize}
                 setFontSize={setFontSize}
                 settingsImage={settings}
-                setBackground={setBackground} // Pass the setBackground function
+                setBackground={setBackground} 
 
                />
             </li>
