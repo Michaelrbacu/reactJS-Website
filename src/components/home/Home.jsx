@@ -45,14 +45,16 @@ const Home = () => {
             
            Other projects will be in my Github</p>
             </div>
-          <div class="details">
-                <br />
-                  <a href="https://github.com/Michaelrbacu">Github Profile</a>
-                  <br />
-                  <a href="https://www.linkedin.com/in/michael-bacu-181a551a6/">LinkedIn Profile</a>
-                  
-              
-          </div>
+            <div className="bottom-left-links">
+  <a href="https://github.com/Michaelrbacu">Github Profile</a>
+  <br />
+  <a href="https://www.linkedin.com/in/michael-bacu-181a551a6/">LinkedIn Profile</a>
+</div>
+<>
+  <div className="spotlight"></div>
+  <div className="bottom-section"></div>
+</>
+
         <div>
         </div>
         
