@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./todo.css";
-import trash from "./trash-icon.png"
-
-
+import trash from "./trash-icon.png";
 
 function Todo() {
   const [tasks, setTasks] = useState([]);
   const [taskName, setTaskName] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
-  const [taskImportance, setTaskImportance] = useState("low"); 
+  const [taskImportance, setTaskImportance] = useState("low");
 
   useEffect(() => {
     const storedTasks = localStorage.getItem("tasks");
@@ -85,8 +83,7 @@ function Todo() {
             >
               <div className="task-text">
                 <strong>{task.name}</strong>
-                <p style={{ color: '#000' }}>{task.description}</p>
-
+                <p style={{ color: "#000" }}>{task.description}</p>
               </div>
               <div className="task-info">
                 <span className="task-date">Added: {task.addedAt}</span>
@@ -98,10 +95,9 @@ function Todo() {
                 src={trash}
                 alt="Delete"
                 className="task-delete"
-                style={{ width: '20px', height: '20px' }}
+                style={{ width: "20px", height: "20px" }}
                 onClick={() => handleDeleteTask(index)}
               />
-
             </div>
           ))}
         </div>

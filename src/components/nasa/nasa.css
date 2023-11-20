@@ -5,7 +5,7 @@ body {
 }
 
 .api-section {
-  background-image: url('./nasabg.jpg'); /* Add your background image URL here */
+  background-image: url("./nasabg.jpg"); /* Add your background image URL here */
   background-size: cover;
   background-repeat: no-repeat;
   color: white; /* Set text color to white */
@@ -14,7 +14,7 @@ body {
 }
 
 .api-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -24,15 +24,15 @@ body {
   z-index: -1; /* Place the overlay behind the content */
 }
 
-
 /* Set a separate background for the NASA section */
 #nasa-section {
-  background-image: url('./nasabg.jpg');
+  background-image: url("./nasabg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-#nasa-section p, #nasa-section li {
+#nasa-section p,
+#nasa-section li {
   color: #ffffff;
 }
 
@@ -132,10 +132,10 @@ img {
   cursor: pointer;
 }
 
-p, li {
+p,
+li {
   color: #ffffff;
 }
-
 
 .neo-list {
   list-style: none;
@@ -167,8 +167,8 @@ p, li {
 }
 
 .api-list ul {
-  display: flex; 
-  justify-content: space-around; 
+  display: flex;
+  justify-content: space-around;
   list-style: none;
   padding: 0;
   margin: 0;

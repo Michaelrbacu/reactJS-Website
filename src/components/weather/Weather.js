@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
-
-
+import React, { useState } from "react";
 
 const api = {
   key: process.env.REACT_APP_OPENWEATHERMAP_API_KEY,
-  base: "https://api.openweathermap.org/data/2.5/"
+  base: "https://api.openweathermap.org/data/2.5/",
 };
 
 const popularCities = [
@@ -20,26 +18,23 @@ const popularCities = [
 ];
 
 function Weather() {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
   const [showDropdown, setShowDropdown] = useState(false);
 
   const search = () => {
-    
     setShowDropdown(false);
     fetch(`${api.base}weather?q=${query}&appid=${api.key}&units=metric`)
       .then((res) => res.json())
       .then((result) => {
         setWeather(result);
-        setQuery('');
+        setQuery("");
         console.log(result);
       });
   };
 
-  
-
   const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       search();
     }
   };
@@ -89,19 +84,24 @@ function Weather() {
   const handleSearchBarFocus = () => {
     setShowDropdown(true);
   };
-            var today = new Date();
-            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            
-
-
-
+  var today = new Date();
+  var time =
+    today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
   return (
-    <div className={(typeof weather.main !== "undefined") ? ((weather.main.temp > 16) ? 'app warm' : 'app') : 'app'}>
+    <div
+      className={
+        typeof weather.main !== "undefined"
+          ? weather.main.temp > 16
+            ? "app warm"
+            : "app"
+          : "app"
+      }
+    >
       <main>
         <div className="search-box">
           <div className="search-bar-container">
-            <input 
+            <input
               type="text"
               className="search-bar"
               placeholder="Search..."
@@ -110,14 +110,11 @@ function Weather() {
               onKeyDown={handleKeyPress}
               onFocus={handleSearchBarFocus}
             />
-<div className="header-bar">
-      <button className="search-button" onClick={search}>
-        Search
-      </button>
-
-
-
-    </div>
+            <div className="header-bar">
+              <button className="search-button" onClick={search}>
+                Search
+              </button>
+            </div>
           </div>
           {showDropdown && (
             <div className="dropdown">
@@ -133,50 +130,46 @@ function Weather() {
             </div>
           )}
         </div>
-        {(typeof weather.main !== "undefined") ? (
-            
-          
-        <div className="top-left">
-            
+        {typeof weather.main !== "undefined" ? (
+          <div className="top-left">
             <div className="location-box">
-              <div className="location">{weather.name}, {weather.sys.country}</div>
-              <div className="date">{dateBuilder(new Date()) + " " + (time)}</div>
+              <div className="location">
+                {weather.name}, {weather.sys.country}
+              </div>
+              <div className="date">{dateBuilder(new Date()) + " " + time}</div>
             </div>
             <div className="weather-box">
               <div className="temp">
                 {Math.round(weather.main.temp)}°C
                 <br></br>
-                {Math.round(weather.main.temp*(9/5)+32)}°F
+                {Math.round(weather.main.temp * (9 / 5) + 32)}°F
               </div>
-              
+            </div>
+
+            <div className="bottom-row">
+              <div className="weather-box2">
+                <div>{weather.weather[0].description}</div>
               </div>
-
-
-
-              <div className="bottom-row">
-  <div className="weather-box2">
-    <div>{weather.weather[0].description}</div>
-  </div>
-  <div className="weather-box2">
-    <div>Humidity: {weather.main.humidity} &nbsp; &nbsp; Cloudiness: {weather.clouds.all}%</div>
-  </div>
-  <div className="weather-box2">
-    <div>Wind Speed: {weather.wind.speed} &nbsp; &nbsp; Wind Direction: {weather.wind.deg}</div>
-  </div>
-</div>
-
-
-
-</div>
-            
-          
-        ) : ('')}
-        
+              <div className="weather-box2">
+                <div>
+                  Humidity: {weather.main.humidity} &nbsp; &nbsp; Cloudiness:{" "}
+                  {weather.clouds.all}%
+                </div>
+              </div>
+              <div className="weather-box2">
+                <div>
+                  Wind Speed: {weather.wind.speed} &nbsp; &nbsp; Wind Direction:{" "}
+                  {weather.wind.deg}
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
       </main>
 
-      <div>
-
-      </div>
+      <div></div>
     </div>
   );
 }

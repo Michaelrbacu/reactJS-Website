@@ -1,82 +1,80 @@
-
 .chatbot-container {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: 20px auto;
-    background-color: #222; /* Set the background color for the chat container */
-    color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 20px auto;
+  background-color: #222; /* Set the background color for the chat container */
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.chat-history {
+  padding: 16px;
+}
+
+.message {
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  max-width: 70%;
+}
+
+.user {
+  background-color: #3f51b5; /* Set the background color for user messages */
+  align-self: flex-end;
+}
+
+.bot {
+  background-color: #f50057; /* Set the background color for bot messages */
+  align-self: flex-start;
+}
+
+.user-input {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+}
+
+.user-input input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  background-color: #333; /* Set the background color for the input field */
+  color: #fff;
+  border-radius: 8px;
+  outline: none;
+}
+
+.user-input button {
+  margin-left: 8px;
+  padding: 8px;
+  border: none;
+  background-color: #3f51b5; /* Set the background color for the send button */
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Scrollbar styles */
+.chat-history {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Optional: Add some animation to make it more interactive */
+.message {
+  animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
   }
-  
-  .chat-history {
-    padding: 16px;
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
-  
-  .message {
-    margin-bottom: 8px;
-    padding: 8px 12px;
-    border-radius: 8px;
-    max-width: 70%;
-  }
-  
-  .user {
-    background-color: #3f51b5; /* Set the background color for user messages */
-    align-self: flex-end;
-  }
-  
-  .bot {
-    background-color: #f50057; /* Set the background color for bot messages */
-    align-self: flex-start;
-  }
-  
-  .user-input {
-    display: flex;
-    align-items: center;
-    padding: 8px;
-  }
-  
-  .user-input input {
-    flex: 1;
-    padding: 8px;
-    border: none;
-    background-color: #333; /* Set the background color for the input field */
-    color: #fff;
-    border-radius: 8px;
-    outline: none;
-  }
-  
-  .user-input button {
-    margin-left: 8px;
-    padding: 8px;
-    border: none;
-    background-color: #3f51b5; /* Set the background color for the send button */
-    color: #fff;
-    border-radius: 8px;
-    cursor: pointer;
-    outline: none;
-  }
-  
-  /* Scrollbar styles */
-  .chat-history {
-    max-height: 300px;
-    overflow-y: auto;
-  }
-  
-  /* Optional: Add some animation to make it more interactive */
-  .message {
-    animation: slideIn 0.5s ease;
-  }
-  
-  @keyframes slideIn {
-    from {
-      transform: translateY(20px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  
+}

@@ -54,7 +54,7 @@ const App = () => {
                   Home
                 </Link>
               </li>
-                <li className="nav-link-container">
+              <li className="nav-link-container">
                 <span className="nav-link">API Projects</span>
                 <ul className="sub-menu">
                   <li>
@@ -89,7 +89,6 @@ const App = () => {
                   </li>
                 </ul>
               </li>
-              
             </ul>
           </nav>
           <div className="content-container">

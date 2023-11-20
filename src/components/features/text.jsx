@@ -22,7 +22,9 @@ const Text = () => {
 
       setTimeout(() => {
         clearInterval(animationInterval);
-        setAnimatedText((prevText) => prevText.substr(0, index) + animationText.charAt(index));
+        setAnimatedText(
+          (prevText) => prevText.substr(0, index) + animationText.charAt(index)
+        );
       }, 100);
     };
 
@@ -33,18 +35,10 @@ const Text = () => {
     }
   }, []);
 
-
   return (
-
     <div>
-      <h1>
-          {animatedText}
-        </h1>
+      <h1>{animatedText}</h1>
     </div>
-    
   );
-  
-
-
-  }; 
+};
 export default Text;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./Projects.css";
 import projectImage1 from "./project-image-url-1.png";
 import projectImage2 from "./project-image-url-2.png";
@@ -11,7 +11,7 @@ const projectsData = [
   {
     title: "This website",
     description: "https://github.com/Michaelrbacu/reactJS-Website",
-    image: projectImage1 , // Update with correct path
+    image: projectImage1, // Update with correct path
   },
   {
     title: "My Senior Project",
@@ -63,7 +63,6 @@ const Projects = () => {
         ))}
       </div>
     </div>
-    
   );
 };
 

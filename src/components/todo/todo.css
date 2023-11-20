@@ -1,5 +1,6 @@
 /* Reset default margins and paddings */
-body, ul {
+body,
+ul {
   margin: 0;
   padding: 0;
 }
@@ -18,7 +19,7 @@ body, ul {
 }
 
 .task {
-  background-color: #ffffff; 
+  background-color: #ffffff;
   border-radius: 10px;
   padding: 20px;
   display: flex;
@@ -35,10 +36,9 @@ body, ul {
 .task-text {
   font-size: 16px;
   margin-bottom: 10px;
-  color: #000; 
+  color: #000;
   flex-grow: 1;
 }
-
 
 .task-importance {
   font-size: 14px;
@@ -55,7 +55,7 @@ body, ul {
 }
 
 .task-date {
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
 }
 
 .add-button {

@@ -36,32 +36,33 @@ const Home = () => {
       <div className="card">
         <div class="lines">
           <div class="imgBx">
-          <img src=""/>
+            <img src="" />
           </div>
-
-          </div>
-          <div class="content">
-            <p>On this website, you can find some of the projects I've built or am building practicing React.<br /> <br /> They are showcased on this website for convenience. 
-            
-           Other projects will be in my Github</p>
-            </div>
-            <div className="bottom-left-links">
-  <a href="https://github.com/Michaelrbacu">Github Profile</a>
-  <br />
-  <a href="https://www.linkedin.com/in/michael-bacu-181a551a6/">LinkedIn Profile</a>
-</div>
-<>
-  <div className="spotlight"></div>
-  <div className="bottom-section"></div>
-</>
-
-        <div>
         </div>
-        
+        <div class="content">
+          <p>
+            On this website, you can find some of the projects I've built or am
+            building practicing React.
+            <br /> <br /> They are showcased on this website for convenience.
+            Other projects will be in my Github
+          </p>
+        </div>
+        <div className="bottom-left-links">
+          <a href="https://github.com/Michaelrbacu">Github Profile</a>
+          <br />
+          <a href="https://www.linkedin.com/in/michael-bacu-181a551a6/">
+            LinkedIn Profile
+          </a>
+        </div>
+        <>
+          <div className="spotlight"></div>
+          <div className="bottom-section"></div>
+        </>
+
+        <div></div>
       </div>
       {/**/}
     </div>
-  
   );
 };
 
