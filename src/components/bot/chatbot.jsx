@@ -83,11 +83,3 @@ const ChatBot = () => {
 };
 
 export default ChatBot;
-
-/*
-<li>
-                  <Link className="nav-link" to="/chatbot">
-                    ChatBot - In Progress
-                  </Link>
-                </li>
-                */
