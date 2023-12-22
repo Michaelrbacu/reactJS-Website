@@ -11,7 +11,7 @@ const projectsData = [
   {
     title: "This website",
     description: "https://github.com/Michaelrbacu/reactJS-Website",
-    image: projectImage1, // Update with correct path
+    image: projectImage1,
   },
   {
     title: "My Senior Project",
@@ -24,8 +24,8 @@ const projectsData = [
     image: projectImage3,
   },
   {
-    title: "SQL assignments and projects.",
-    description: "https://github.com/Michaelrbacu/IST-278",
+    title: "Pluto - A libGDX Java game (in progress)",
+    description: "https://github.com/Michaelrbacu/Pluto",
     image: projectImage4,
   },
   {
