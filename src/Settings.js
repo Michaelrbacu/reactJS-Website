@@ -37,8 +37,8 @@ const FontSizeSettings = ({ fontSize, setFontSize }) => {
       <h3>Font Size Settings</h3>
       <input
         type="range"
-        min="12" // Set your desired minimum font size
-        max="24" // Set your desired maximum font size
+        min="12" 
+        max="24" 
         value={fontSize}
         onChange={handleFontSizeChange}
       />
@@ -50,10 +50,10 @@ const FontSizeSettings = ({ fontSize, setFontSize }) => {
 
 
 const Settings = ({ brightness, setBrightness, fontSize, setFontSize, setBackground }) => {
-  const [showSettings, setShowSettings] = useState(false); // Set default state to false
+  const [showSettings, setShowSettings] = useState(false); 
 
   const handleSettingsButtonClick = () => {
-    setShowSettings(prevState => !prevState); // Toggle the visibility
+    setShowSettings(prevState => !prevState);
   };
 
   
