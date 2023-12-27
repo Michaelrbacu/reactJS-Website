@@ -104,7 +104,7 @@ a:hover {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  color: white; /* Set text color to white for visibility */
+  color: white;
 }
 
 .repo-details-grid {
