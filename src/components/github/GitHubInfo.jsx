@@ -92,7 +92,7 @@ const GitHubInfo = () => {
   return (
     <div className="github-info-container">
       <h1 className="github-info-title">GitHub Repository Information</h1>
-      <h4>This page will take a few extra seconds to load everything.</h4>
+      <h4>This page will take a few extra seconds to load everything. Clicking all the different repositorys will help. </h4>
       <div className="github-repo-container">
         {repos.map((repo, index) => (
           <div
