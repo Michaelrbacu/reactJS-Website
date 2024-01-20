@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-//this is a test for github
+
 // OpenWeatherMap API configuration
 const api = {
   key: process.env.REACT_APP_OPENWEATHERMAP_API_KEY,
