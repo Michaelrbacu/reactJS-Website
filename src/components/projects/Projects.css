@@ -69,11 +69,25 @@
     }
   
     #projects h2 {
-      margin-bottom: 50px;
+      color: #000000;
     }
-  
+    
+    #projects p {
+      color: #000000;
+    }
+
+    #projects h3 {
+      color: #ffffff;
+    }
     #projects .contents {
       grid-template-columns: repeat(3, 1fr);
     }
+  }
+  
+  #projects .contents .product video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
   }
   

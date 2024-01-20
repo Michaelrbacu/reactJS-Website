@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Projects.css";
 import projectImage1 from "./project-image-url-1.png";
 import projectImage2 from "./project-image-url-2.png";
@@ -6,6 +6,7 @@ import projectImage3 from "./project-image-url-3.png";
 import projectImage4 from "./project-image-url-4.png";
 import projectImage5 from "./project-image-url-5.png";
 import projectImage6 from "./project-image-url-6.png";
+import plutoGameplayVideo from "./PlutoGameplay.mp4";
 
 const projectsData = [
   {
@@ -41,13 +42,31 @@ const projectsData = [
 ];
 
 const Projects = () => {
+  const [showPlutoGameplay, setShowPlutoGameplay] = useState(false);
+
+  const handlePlutoClick = () => {
+    setShowPlutoGameplay(!showPlutoGameplay);
+  };
+
+
   return (
     <div id="projects" className="container">
-      <h2 className="heading">Projects I've Built:</h2>
-      <h3>These include projects I built in classes and for practice.</h3>
-      <br />
-
-      <div className="contents">
+    <h1 className="heading">Projects I've Built:</h1>
+    <h2>These include projects I built in classes and for practice.</h2>
+    <br />
+    
+    <div className="contents">
+        <div className="product">
+          {showPlutoGameplay && (
+            <video width="560" height="315" controls>
+              <source src={plutoGameplayVideo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          )}
+          <p onClick={handlePlutoClick} style={{ cursor: "pointer", position: "absolute", top: 0 }}>
+            Click here to view the early stages of Pluto
+          </p>
+        </div>
         {projectsData.map((project, index) => (
           <div
             key={index}
@@ -65,5 +84,4 @@ const Projects = () => {
     </div>
   );
 };
-
 export default Projects;
