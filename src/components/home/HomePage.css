@@ -1,4 +1,3 @@
-
 .homepage {
   text-align: center;
   margin: 50px auto;
@@ -14,7 +13,6 @@
   transition: 0.5s;
 }
 
-
 .card .lines {
   position: absolute;
   inset: 0;
@@ -23,35 +21,38 @@
 }
 
 .card .lines::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
-  width: 600px;  
+  transform: translate(-50%, -50%);
+  width: 600px;
   height: 120px;
-  background: linear-gradient(transparent, #45f3ff,#45f3ff,#45f3ff,transparent);
+  background: linear-gradient(
+    transparent,
+    #45f3ff,
+    #45f3ff,
+    #45f3ff,
+    transparent
+  );
   animation: animate 4s linear infinite;
 }
 
 @keyframes animate {
-  0%{
-    transform: translate(-50%,-50%) rotate(0deg);
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
   }
-  100%{
-    transform: translate(-50%,-50%) rotate(360deg);
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 
-.card .lines::after{
-  content: '';
+.card .lines::after {
+  content: "";
   position: absolute;
   inset: 3px;
   background: #292929;
-
-
 }
-
 
 .card .content {
   position: absolute;
@@ -61,29 +62,25 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-
 }
 
 .card .details {
-    padding: 40px;
-    width: 100%;
-    transition: 0.5s;
-    transform: translateY(145px);
+  padding: 40px;
+  width: 100%;
+  transition: 0.5s;
+  transform: translateY(145px);
 }
-
 
 h1 {
   font-size: 36px;
   margin-bottom: 20px;
   color: #000000;
-
 }
 
 h2 {
   font-size: 24px;
   margin-bottom: 10px;
   color: #ffffff;
-
 }
 
 p {
@@ -95,7 +92,6 @@ a {
   font-size: 16px;
   color: #ffffff;
   font-weight: bold;
-  
 }
 
 @keyframes typing {
@@ -123,7 +119,6 @@ a {
   }
 }
 
-
 /* Add animation to show the letters one by one */
 @keyframes fadeIn {
   0% {
@@ -142,7 +137,6 @@ a {
   opacity: 0;
   display: inline-block;
 }
-
 
 /* Bottom Left Links */
 .bottom-left-links {
@@ -173,7 +167,7 @@ a {
 }
 
 .bottom-left-links:hover + .bottom-section {
-  height: 30px; 
+  height: 30px;
 }
 
 .spotlight {

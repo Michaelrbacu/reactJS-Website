@@ -32,13 +32,13 @@ const FontSizeSettings = ({ fontSize, setFontSize }) => {
   };
 
   return (
-    
+
     <div className="font-size-popup">
       <h3>Font Size Settings</h3>
       <input
         type="range"
-        min="12" 
-        max="24" 
+        min="12"
+        max="24"
         value={fontSize}
         onChange={handleFontSizeChange}
       />
@@ -50,18 +50,18 @@ const FontSizeSettings = ({ fontSize, setFontSize }) => {
 
 
 const Settings = ({ brightness, setBrightness, fontSize, setFontSize, setBackground }) => {
-  const [showSettings, setShowSettings] = useState(false); 
+  const [showSettings, setShowSettings] = useState(false);
 
   const handleSettingsButtonClick = () => {
     setShowSettings(prevState => !prevState);
   };
 
-  
+
   const handleBackgroundSwitch = () => {
     document.documentElement.style.setProperty('--background-image', 'url("./background2.jpg")');
   };
-  
-  
+
+
 
   return (
     <div className="settings">

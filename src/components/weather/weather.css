@@ -1,216 +1,216 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .dropdown {
-	display: block;
-	width: 100%;
-	padding: 15px;
-  
-	appearance: none;
-	background: none;
-	border: none;
-	outline: none;
-  
-	background-color: rgba(255, 255, 255, 0.5);
-	border-radius: 0px 0px 16px 16px;
-  
-	box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
-	
-	color: #313131;
-	font-size: 20px;
-  
-	transition: 0.4s ease;
-  }
-  
-  .dropdown-item {
-	padding: 10px;
-	cursor: pointer;
-  }
-  
-  .dropdown-item:hover {
-	background-color: #f1f1f1;
-  }
-  
-  .search-button {
-	  appearance: button;
-	  background-color: #000;
-	  background-image: none;
-	  border: 1px solid #000;
-	  border-radius: 4px;
-	  box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
-	  box-sizing: border-box;
-	  color: #fff;
-	  cursor: pointer;
-	  display: inline-block;
-	  font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
-	  font-size: 14px;
-	  font-weight: 400;
-	  line-height: 20px;
-	  margin: 0 5px 10px 0;
-	  overflow: visible;
-	  padding: 12px 40px;
-	  text-align: center;
-	  text-transform: none;
-	  touch-action: manipulation;
-	  user-select: none;
-	  -webkit-user-select: none;
-	  vertical-align: middle;
-	  white-space: nowrap;
-	}
-	
-	.search-button:focus {
-	  text-decoration: none;
-	}
-	
-	.search-button:hover {
-	  text-decoration: none;
-	}
-	
-	.search-button:active {
-	  box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
-	  outline: 0;
-	}
-	
-	.search-button:not([disabled]):active {
-	  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
-	  transform: translate(2px, 2px);
-	}
-	
-	@media (min-width: 768px) {
-	  .button-50 {
-		padding: 12px 50px;
-	  }
-	}
+  display: block;
+  width: 100%;
+  padding: 15px;
 
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
 
-  body {
-	font-family: 'Montserrat', sans-serif;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 0px 0px 16px 16px;
+
+  box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
+
+  color: #313131;
+  font-size: 20px;
+
+  transition: 0.4s ease;
+}
+
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+.search-button {
+  appearance: button;
+  background-color: #000;
+  background-image: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: ITCAvantGardeStd-Bk, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.search-button:focus {
+  text-decoration: none;
+}
+
+.search-button:hover {
+  text-decoration: none;
+}
+
+.search-button:active {
+  box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
+  outline: 0;
+}
+
+.search-button:not([disabled]):active {
+  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .button-50 {
+    padding: 12px 50px;
   }
-  
-  .app {
-	background-image: url('./cold-bg.jpg');
-	background-size: cover;
-	background-position: bottom;
-	transition: 0.4 ease;
-  }
-  
-  .app.warm {
-	background-image: url('./warm-bg.jpg');
-  }
-  
-  main {
-	min-height: 100vh;
-	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.75));
-	padding: 25px;
-  }
-  
-  .search-box {
-	width: 100%;
-	margin: 0 0 75px;
-  }
-  
-  .search-box .search-bar {
-	display: block;
-	width: 100%;
-	padding: 15px;
-  
-	appearance: none;
-	background: none;
-	border: none;
-	outline: none;
-  
-	background-color: rgba(255, 255, 255, 0.5);
-	border-radius: 0px 0px 16px 16px;
-	margin-top: -25px;
-  
-	box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
-	
-	color: #313131;
-	font-size: 20px;
-  
-	transition: 0.4s ease;
-  }
-  
-  .search-box .search-bar:focus {
-	background-color: rgba(255, 255, 255, 0.75);
-  }
-  
-  .location-box .location {
-	color: #FFF;
-	font-size: 32px;
-	font-weight: 500;
-	text-align: center;
-	text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
-  }
-  
-  .location-box .date {
-	color: #FFF;
-	font-size: 20px;
-	font-weight: 300;
-	font-style: italic;
-	text-align: center;
-	text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
-  }
-  .weather-box2 {
-	text-align: center;
-	position: relative;
-	right: 0;
-	margin: 30px auto;
-	background-color: rgba(255, 255, 255, 0.2);
-	border-radius: 16px;
-	box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
-	text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
-	color: #FFF;
-	font-size: 24px;
-	font-weight: 700;
-	text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
-	
-  }
-  
-  .weather-box {
-	text-align: center;
-  }
-  
-  .weather-box .temp {
-	position: relative;
-	display: inline-block;
-	margin: 30px auto;
-	background-color: rgba(255, 255, 255, 0.2);
-	border-radius: 16px;
-  
-	padding: 15px 25px;
-  
-	color: #FFF;
-	font-size: 102px;
-	font-weight: 900;
-  
-	text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
-	text-align: center;
-	box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
-  }
-  
-  .weather-box .weather {
-	color: #FFF;
-	font-size: 48px;
-	font-weight: 700;
-	text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
-  }
-  
-  .bottom-row {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	background-color: rgba(0, 0, 0, 0.5);
-	padding: 20px;
-	border-radius: 16px;
-	margin: 20px auto;
-	box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
-	color: #FFF;
-	font-size: 24px;
-	font-weight: 700;
-  }
-  
-  
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.app {
+  background-image: url("./cold-bg.jpg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease;
+}
+
+.app.warm {
+  background-image: url("./warm-bg.jpg");
+}
+
+main {
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.75)
+  );
+  padding: 25px;
+}
+
+.search-box {
+  width: 100%;
+  margin: 0 0 75px;
+}
+
+.search-box .search-bar {
+  display: block;
+  width: 100%;
+  padding: 15px;
+
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 0px 0px 16px 16px;
+  margin-top: -25px;
+
+  box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
+
+  color: #313131;
+  font-size: 20px;
+
+  transition: 0.4s ease;
+}
+
+.search-box .search-bar:focus {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.location-box .location {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+
+.location-box .date {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+  text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
+}
+.weather-box2 {
+  text-align: center;
+  position: relative;
+  right: 0;
+  margin: 30px auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+
+.weather-box {
+  text-align: center;
+}
+
+.weather-box .temp {
+  position: relative;
+  display: inline-block;
+  margin: 30px auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+
+  padding: 15px 25px;
+
+  color: #fff;
+  font-size: 102px;
+  font-weight: 900;
+
+  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+  text-align: center;
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.weather-box .weather {
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+
+.bottom-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 16px;
+  margin: 20px auto;
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+}

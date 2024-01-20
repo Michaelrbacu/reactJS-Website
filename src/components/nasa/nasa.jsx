@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
 import "./nasa.css";
-
+//Not all of the data is working correctly yet some still needs fixed.
 const Nasa = () => {
   const [lightboxIndex, setLightboxIndex] = useState(0); // Index for the image lightbox
   const [lightboxOpen, setLightboxOpen] = useState(false); // Flag to control the lightbox visibility
