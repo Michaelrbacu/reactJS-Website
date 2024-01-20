@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/reactJS-Website/static/css/main.24ea3cd1.css",
-    "main.js": "/reactJS-Website/static/js/main.7b5eaf4e.js",
-    "static/css/701.63c86134.chunk.css": "/reactJS-Website/static/css/701.63c86134.chunk.css",
-    "static/js/701.cfa51e46.chunk.js": "/reactJS-Website/static/js/701.cfa51e46.chunk.js",
+    "main.js": "/reactJS-Website/static/js/main.6ee667be.js",
+    "static/css/709.e407030b.chunk.css": "/reactJS-Website/static/css/709.e407030b.chunk.css",
+    "static/js/709.77c85c86.chunk.js": "/reactJS-Website/static/js/709.77c85c86.chunk.js",
     "static/js/403.d85bc3e9.chunk.js": "/reactJS-Website/static/js/403.d85bc3e9.chunk.js",
     "static/css/280.96d30409.chunk.css": "/reactJS-Website/static/css/280.96d30409.chunk.css",
     "static/js/280.2ab5970a.chunk.js": "/reactJS-Website/static/js/280.2ab5970a.chunk.js",
@@ -17,6 +17,7 @@
     "static/js/477.dbf314ff.chunk.js": "/reactJS-Website/static/js/477.dbf314ff.chunk.js",
     "static/media/leonardo-martins-YNJsgAivf8A-unsplash.jpg": "/reactJS-Website/static/media/leonardo-martins-YNJsgAivf8A-unsplash.43c9801c3a266edf18d3.jpg",
     "static/media/w-s-coda-vho6zT9D_c8-unsplash.jpg": "/reactJS-Website/static/media/w-s-coda-vho6zT9D_c8-unsplash.9d5f027f60ba4799b7a1.jpg",
+    "static/media/PlutoGameplay.mp4": "/reactJS-Website/static/media/PlutoGameplay.a9cfa79c62e014576bde.mp4",
     "static/media/josh-hild-XKNoL2GQg5o-unsplash.jpg": "/reactJS-Website/static/media/josh-hild-XKNoL2GQg5o-unsplash.bcc19fbb646a2e1b8bf0.jpg",
     "static/media/nick-fewings-hYaWr_9yiJ8-unsplash.jpg": "/reactJS-Website/static/media/nick-fewings-hYaWr_9yiJ8-unsplash.5b433dad39bd325f3343.jpg",
     "static/media/nasabg.jpg": "/reactJS-Website/static/media/nasabg.c44ed04c57064dd1b4d5.jpg",
@@ -42,9 +43,9 @@
     "static/media/fa-v4compatibility.woff2": "/reactJS-Website/static/media/fa-v4compatibility.b3049b13a93f07e026fc.woff2",
     "index.html": "/reactJS-Website/index.html",
     "main.24ea3cd1.css.map": "/reactJS-Website/static/css/main.24ea3cd1.css.map",
-    "main.7b5eaf4e.js.map": "/reactJS-Website/static/js/main.7b5eaf4e.js.map",
-    "701.63c86134.chunk.css.map": "/reactJS-Website/static/css/701.63c86134.chunk.css.map",
-    "701.cfa51e46.chunk.js.map": "/reactJS-Website/static/js/701.cfa51e46.chunk.js.map",
+    "main.6ee667be.js.map": "/reactJS-Website/static/js/main.6ee667be.js.map",
+    "709.e407030b.chunk.css.map": "/reactJS-Website/static/css/709.e407030b.chunk.css.map",
+    "709.77c85c86.chunk.js.map": "/reactJS-Website/static/js/709.77c85c86.chunk.js.map",
     "403.d85bc3e9.chunk.js.map": "/reactJS-Website/static/js/403.d85bc3e9.chunk.js.map",
     "280.96d30409.chunk.css.map": "/reactJS-Website/static/css/280.96d30409.chunk.css.map",
     "280.2ab5970a.chunk.js.map": "/reactJS-Website/static/js/280.2ab5970a.chunk.js.map",
@@ -59,6 +60,6 @@
   },
   "entrypoints": [
     "static/css/main.24ea3cd1.css",
-    "static/js/main.7b5eaf4e.js"
+    "static/js/main.6ee667be.js"
   ]
 }
