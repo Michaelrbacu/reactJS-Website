@@ -72,6 +72,11 @@ const App = () => {
                       NASA API
                     </Link>
                   </li>
+                  <li>
+                    <Link className="nav-link" to="/chatbot">
+                      ChatBot
+                    </Link>
+                  </li>
                 </ul>
               </li>
               <li>
@@ -100,6 +105,7 @@ const App = () => {
                 <Route path="/api" element={<GitHubInfo />} />
                 <Route path="/nasa" element={<Nasa />} />
                 <Route path="/todo" element={<Todo />} />
+                <Route path="/chatbot" element={<ChatBot />} />
                 <Route path="*" element={<Navigate to="/home" />} />
               </Routes>
             </Suspense>

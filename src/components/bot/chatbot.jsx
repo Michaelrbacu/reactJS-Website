@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import axios from "axios"; // Import axios for API requests
-import "./chatbot.css"; // ChatBot styles
+import axios from "axios"; 
+import "./chatbot.css";
 
 const ChatBot = () => {
   const [chatHistory, setChatHistory] = useState([
     { sender: "bot", message: "Hi there! How can I help you?" },
   ]);
   const [userMessage, setUserMessage] = useState("");
-  const OPENAI_API_KEY = "";
+  const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
   const handleUserMessage = (e) => {
     setUserMessage(e.target.value);
@@ -16,7 +16,6 @@ const ChatBot = () => {
   const handleSendMessage = async (e) => {
     e.preventDefault();
     if (userMessage.trim() !== "") {
-      // Add user message to chat history
       setChatHistory((prevChatHistory) => [
         ...prevChatHistory,
         { sender: "user", message: userMessage },
