@@ -8,7 +8,7 @@ const LoadingScreen = ({ onFinishLoading }) => {
     const timeout = setTimeout(() => {
       setLoading(false);
       onFinishLoading();
-    }, 4000); // 4 seconds
+    }, 4000);
 
     return () => clearTimeout(timeout);
   }, [onFinishLoading]);
